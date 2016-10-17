@@ -203,6 +203,44 @@ func (e Event) String() string {
 	return Stringify(e)
 }
 
+func toTimestamp(t interface{}) string {
+	switch t.(type) {
+		case json.Number: {
+			i, err := t.(json.Number).Int64()
+			if err != nil {
+				panic(fmt.Sprintf("error deserializing number: %v, error: %v", t, err))
+			}
+			tm := time.Unix(i, 0)
+			return tm.Format("2006-01-02T15:04:05Z")
+		}
+		case float64: {
+			tm := time.Unix(int64(t.(float64)), 0)
+			return tm.Format("2006-01-02T15:04:05Z")
+		}
+	}
+	return t.(string)
+}
+
+func applyPushEventHack(buf []byte) []byte {
+	// webhooks have an issue where the pushed_at and created_at come in as
+	// integers vs string like the normal API so we need to fix them before we
+	// deserialize them or we get an error
+	var p map[string]interface{}
+	d := json.NewDecoder(strings.NewReader(string(buf)))
+	d.UseNumber() // prevent numbers from getting converted
+	if err := d.Decode(&p); err != nil {
+		panic(err.Error())
+	}
+	r := p["repository"].(map[string]interface{})
+	r["pushed_at"] = toTimestamp(r["pushed_at"])
+	r["created_at"] = toTimestamp(r["created_at"])
+	result, err := json.Marshal(p)
+	if err != nil {
+		panic(err.Error())
+	}
+	return result
+}
+
 // Payload returns the parsed event payload. For recognized event types,
 // a value of the corresponding struct type will be returned.
 func (e *Event) Payload() (payload interface{}) {
@@ -244,6 +282,7 @@ func (e *Event) Payload() (payload interface{}) {
 	case "PullRequestReviewCommentEvent":
 		payload = &PullRequestReviewCommentEvent{}
 	case "PushEvent":
+		*e.RawPayload = applyPushEventHack(*e.RawPayload)
 		payload = &PushEvent{}
 	case "ReleaseEvent":
 		payload = &ReleaseEvent{}
