@@ -23,7 +23,7 @@ type MemberEvent struct {
 func (m *MemberEvent) Reset()                    { *m = MemberEvent{} }
 func (m *MemberEvent) String() string            { return proto.CompactTextString(m) }
 func (*MemberEvent) ProtoMessage()               {}
-func (*MemberEvent) Descriptor() ([]byte, []int) { return fileDescriptor17, []int{0} }
+func (*MemberEvent) Descriptor() ([]byte, []int) { return fileDescriptor18, []int{0} }
 
 func (m *MemberEvent) GetMember() *User {
 	if m != nil {
@@ -50,9 +50,9 @@ func init() {
 	proto.RegisterType((*MemberEvent)(nil), "github.MemberEvent")
 }
 
-func init() { proto.RegisterFile("member_event.proto", fileDescriptor17) }
+func init() { proto.RegisterFile("member_event.proto", fileDescriptor18) }
 
-var fileDescriptor17 = []byte{
+var fileDescriptor18 = []byte{
 	// 165 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0xca, 0x4d, 0xcd, 0x4d,
 	0x4a, 0x2d, 0x8a, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62,

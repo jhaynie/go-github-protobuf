@@ -27,7 +27,7 @@ type Download struct {
 func (m *Download) Reset()                    { *m = Download{} }
 func (m *Download) String() string            { return proto.CompactTextString(m) }
 func (*Download) ProtoMessage()               {}
-func (*Download) Descriptor() ([]byte, []int) { return fileDescriptor8, []int{0} }
+func (*Download) Descriptor() ([]byte, []int) { return fileDescriptor9, []int{0} }
 
 type DownloadEvent struct {
 	Download *Download `protobuf:"bytes,1,opt,name=download" json:"download,omitempty"`
@@ -36,7 +36,7 @@ type DownloadEvent struct {
 func (m *DownloadEvent) Reset()                    { *m = DownloadEvent{} }
 func (m *DownloadEvent) String() string            { return proto.CompactTextString(m) }
 func (*DownloadEvent) ProtoMessage()               {}
-func (*DownloadEvent) Descriptor() ([]byte, []int) { return fileDescriptor8, []int{1} }
+func (*DownloadEvent) Descriptor() ([]byte, []int) { return fileDescriptor9, []int{1} }
 
 func (m *DownloadEvent) GetDownload() *Download {
 	if m != nil {
@@ -50,9 +50,9 @@ func init() {
 	proto.RegisterType((*DownloadEvent)(nil), "github.DownloadEvent")
 }
 
-func init() { proto.RegisterFile("download_event.proto", fileDescriptor8) }
+func init() { proto.RegisterFile("download_event.proto", fileDescriptor9) }
 
-var fileDescriptor8 = []byte{
+var fileDescriptor9 = []byte{
 	// 235 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x4c, 0x90, 0xcd, 0x4e, 0xc3, 0x30,
 	0x10, 0x84, 0x95, 0xfe, 0xa4, 0x66, 0x4b, 0xab, 0x6a, 0xc5, 0xc1, 0xdc, 0x4a, 0x25, 0x24, 0x0e,

@@ -23,7 +23,7 @@ type ReleaseEvent struct {
 func (m *ReleaseEvent) Reset()                    { *m = ReleaseEvent{} }
 func (m *ReleaseEvent) String() string            { return proto.CompactTextString(m) }
 func (*ReleaseEvent) ProtoMessage()               {}
-func (*ReleaseEvent) Descriptor() ([]byte, []int) { return fileDescriptor28, []int{0} }
+func (*ReleaseEvent) Descriptor() ([]byte, []int) { return fileDescriptor29, []int{0} }
 
 func (m *ReleaseEvent) GetRelease() *Release {
 	if m != nil {
@@ -50,9 +50,9 @@ func init() {
 	proto.RegisterType((*ReleaseEvent)(nil), "github.ReleaseEvent")
 }
 
-func init() { proto.RegisterFile("release_event.proto", fileDescriptor28) }
+func init() { proto.RegisterFile("release_event.proto", fileDescriptor29) }
 
-var fileDescriptor28 = []byte{
+var fileDescriptor29 = []byte{
 	// 178 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x2e, 0x4a, 0xcd, 0x49,
 	0x4d, 0x2c, 0x4e, 0x8d, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17,

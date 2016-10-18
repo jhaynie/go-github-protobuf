@@ -23,7 +23,7 @@ type RepositoryEvent struct {
 func (m *RepositoryEvent) Reset()                    { *m = RepositoryEvent{} }
 func (m *RepositoryEvent) String() string            { return proto.CompactTextString(m) }
 func (*RepositoryEvent) ProtoMessage()               {}
-func (*RepositoryEvent) Descriptor() ([]byte, []int) { return fileDescriptor30, []int{0} }
+func (*RepositoryEvent) Descriptor() ([]byte, []int) { return fileDescriptor31, []int{0} }
 
 func (m *RepositoryEvent) GetRepository() *Repository {
 	if m != nil {
@@ -50,9 +50,9 @@ func init() {
 	proto.RegisterType((*RepositoryEvent)(nil), "github.RepositoryEvent")
 }
 
-func init() { proto.RegisterFile("repository_event.proto", fileDescriptor30) }
+func init() { proto.RegisterFile("repository_event.proto", fileDescriptor31) }
 
-var fileDescriptor30 = []byte{
+var fileDescriptor31 = []byte{
 	// 170 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x2b, 0x4a, 0x2d, 0xc8,
 	0x2f, 0xce, 0x2c, 0xc9, 0x2f, 0xaa, 0x8c, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca,

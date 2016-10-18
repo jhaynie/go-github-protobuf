@@ -20,7 +20,7 @@ type PullRequestReviewLink struct {
 func (m *PullRequestReviewLink) Reset()                    { *m = PullRequestReviewLink{} }
 func (m *PullRequestReviewLink) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewLink) ProtoMessage()               {}
-func (*PullRequestReviewLink) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{0} }
+func (*PullRequestReviewLink) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{0} }
 
 type PullRequestReviewLinks struct {
 	Html        *PullRequestReviewLink `protobuf:"bytes,1,opt,name=html" json:"html,omitempty"`
@@ -30,7 +30,7 @@ type PullRequestReviewLinks struct {
 func (m *PullRequestReviewLinks) Reset()                    { *m = PullRequestReviewLinks{} }
 func (m *PullRequestReviewLinks) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewLinks) ProtoMessage()               {}
-func (*PullRequestReviewLinks) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{1} }
+func (*PullRequestReviewLinks) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{1} }
 
 func (m *PullRequestReviewLinks) GetHtml() *PullRequestReviewLink {
 	if m != nil {
@@ -60,7 +60,7 @@ type PullRequestReview struct {
 func (m *PullRequestReview) Reset()                    { *m = PullRequestReview{} }
 func (m *PullRequestReview) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReview) ProtoMessage()               {}
-func (*PullRequestReview) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{2} }
+func (*PullRequestReview) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{2} }
 
 func (m *PullRequestReview) GetUser() *User {
 	if m != nil {
@@ -87,7 +87,7 @@ type PullRequestReviewEvent struct {
 func (m *PullRequestReviewEvent) Reset()                    { *m = PullRequestReviewEvent{} }
 func (m *PullRequestReviewEvent) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewEvent) ProtoMessage()               {}
-func (*PullRequestReviewEvent) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{3} }
+func (*PullRequestReviewEvent) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{3} }
 
 func (m *PullRequestReviewEvent) GetReview() *PullRequestReview {
 	if m != nil {
@@ -124,9 +124,9 @@ func init() {
 	proto.RegisterType((*PullRequestReviewEvent)(nil), "github.PullRequestReviewEvent")
 }
 
-func init() { proto.RegisterFile("pull_request_review_event.proto", fileDescriptor24) }
+func init() { proto.RegisterFile("pull_request_review_event.proto", fileDescriptor25) }
 
-var fileDescriptor24 = []byte{
+var fileDescriptor25 = []byte{
 	// 382 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x8c, 0x52, 0x4d, 0x4f, 0xea, 0x40,
 	0x14, 0x0d, 0x1f, 0x2d, 0xbc, 0x5b, 0x42, 0xe0, 0xbe, 0xf7, 0x48, 0x21, 0x51, 0xb1, 0x71, 0x41,

@@ -22,7 +22,7 @@ type DeploymentEvent struct {
 func (m *DeploymentEvent) Reset()                    { *m = DeploymentEvent{} }
 func (m *DeploymentEvent) String() string            { return proto.CompactTextString(m) }
 func (*DeploymentEvent) ProtoMessage()               {}
-func (*DeploymentEvent) Descriptor() ([]byte, []int) { return fileDescriptor6, []int{0} }
+func (*DeploymentEvent) Descriptor() ([]byte, []int) { return fileDescriptor7, []int{0} }
 
 func (m *DeploymentEvent) GetDeployment() *Deployment {
 	if m != nil {
@@ -49,9 +49,9 @@ func init() {
 	proto.RegisterType((*DeploymentEvent)(nil), "github.DeploymentEvent")
 }
 
-func init() { proto.RegisterFile("deployment_event.proto", fileDescriptor6) }
+func init() { proto.RegisterFile("deployment_event.proto", fileDescriptor7) }
 
-var fileDescriptor6 = []byte{
+var fileDescriptor7 = []byte{
 	// 157 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x4b, 0x49, 0x2d, 0xc8,
 	0xc9, 0xaf, 0xcc, 0x4d, 0xcd, 0x2b, 0x89, 0x4f, 0x2d, 0x03, 0x92, 0x7a, 0x05, 0x45, 0xf9, 0x25,

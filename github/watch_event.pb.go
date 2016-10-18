@@ -22,7 +22,7 @@ type WatchEvent struct {
 func (m *WatchEvent) Reset()                    { *m = WatchEvent{} }
 func (m *WatchEvent) String() string            { return proto.CompactTextString(m) }
 func (*WatchEvent) ProtoMessage()               {}
-func (*WatchEvent) Descriptor() ([]byte, []int) { return fileDescriptor35, []int{0} }
+func (*WatchEvent) Descriptor() ([]byte, []int) { return fileDescriptor36, []int{0} }
 
 func (m *WatchEvent) GetRepository() *Repository {
 	if m != nil {
@@ -42,9 +42,9 @@ func init() {
 	proto.RegisterType((*WatchEvent)(nil), "github.WatchEvent")
 }
 
-func init() { proto.RegisterFile("watch_event.proto", fileDescriptor35) }
+func init() { proto.RegisterFile("watch_event.proto", fileDescriptor36) }
 
-var fileDescriptor35 = []byte{
+var fileDescriptor36 = []byte{
 	// 153 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x2c, 0x4f, 0x2c, 0x49,
 	0xce, 0x88, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4b,

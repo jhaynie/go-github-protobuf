@@ -49,15 +49,15 @@ type User struct {
 func (m *User) Reset()                    { *m = User{} }
 func (m *User) String() string            { return proto.CompactTextString(m) }
 func (*User) ProtoMessage()               {}
-func (*User) Descriptor() ([]byte, []int) { return fileDescriptor34, []int{0} }
+func (*User) Descriptor() ([]byte, []int) { return fileDescriptor35, []int{0} }
 
 func init() {
 	proto.RegisterType((*User)(nil), "github.User")
 }
 
-func init() { proto.RegisterFile("user.proto", fileDescriptor34) }
+func init() { proto.RegisterFile("user.proto", fileDescriptor35) }
 
-var fileDescriptor34 = []byte{
+var fileDescriptor35 = []byte{
 	// 474 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x54, 0x93, 0xc9, 0x6e, 0xdb, 0x30,
 	0x10, 0x86, 0x91, 0xc4, 0x8b, 0x34, 0x76, 0x52, 0x9b, 0x49, 0x5b, 0x66, 0xeb, 0x7a, 0x29, 0x50,

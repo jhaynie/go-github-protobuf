@@ -20,7 +20,7 @@ type BuildError struct {
 func (m *BuildError) Reset()                    { *m = BuildError{} }
 func (m *BuildError) String() string            { return proto.CompactTextString(m) }
 func (*BuildError) ProtoMessage()               {}
-func (*BuildError) Descriptor() ([]byte, []int) { return fileDescriptor20, []int{0} }
+func (*BuildError) Descriptor() ([]byte, []int) { return fileDescriptor21, []int{0} }
 
 type Build struct {
 	Url       string      `protobuf:"bytes,1,opt,name=url" json:"url,omitempty"`
@@ -36,7 +36,7 @@ type Build struct {
 func (m *Build) Reset()                    { *m = Build{} }
 func (m *Build) String() string            { return proto.CompactTextString(m) }
 func (*Build) ProtoMessage()               {}
-func (*Build) Descriptor() ([]byte, []int) { return fileDescriptor20, []int{1} }
+func (*Build) Descriptor() ([]byte, []int) { return fileDescriptor21, []int{1} }
 
 func (m *Build) GetError() *BuildError {
 	if m != nil {
@@ -62,7 +62,7 @@ type PageBuildEvent struct {
 func (m *PageBuildEvent) Reset()                    { *m = PageBuildEvent{} }
 func (m *PageBuildEvent) String() string            { return proto.CompactTextString(m) }
 func (*PageBuildEvent) ProtoMessage()               {}
-func (*PageBuildEvent) Descriptor() ([]byte, []int) { return fileDescriptor20, []int{2} }
+func (*PageBuildEvent) Descriptor() ([]byte, []int) { return fileDescriptor21, []int{2} }
 
 func (m *PageBuildEvent) GetBuild() *Build {
 	if m != nil {
@@ -91,9 +91,9 @@ func init() {
 	proto.RegisterType((*PageBuildEvent)(nil), "github.PageBuildEvent")
 }
 
-func init() { proto.RegisterFile("page_build_event.proto", fileDescriptor20) }
+func init() { proto.RegisterFile("page_build_event.proto", fileDescriptor21) }
 
-var fileDescriptor20 = []byte{
+var fileDescriptor21 = []byte{
 	// 308 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x74, 0x91, 0xcf, 0x6a, 0x02, 0x31,
 	0x10, 0xc6, 0x59, 0x6d, 0x56, 0x1d, 0x5b, 0x91, 0x39, 0x48, 0x10, 0x0a, 0xc5, 0x96, 0xe2, 0xc9,

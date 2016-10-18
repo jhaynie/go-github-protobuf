@@ -22,15 +22,15 @@ type ForkApplyEvent struct {
 func (m *ForkApplyEvent) Reset()                    { *m = ForkApplyEvent{} }
 func (m *ForkApplyEvent) String() string            { return proto.CompactTextString(m) }
 func (*ForkApplyEvent) ProtoMessage()               {}
-func (*ForkApplyEvent) Descriptor() ([]byte, []int) { return fileDescriptor10, []int{0} }
+func (*ForkApplyEvent) Descriptor() ([]byte, []int) { return fileDescriptor11, []int{0} }
 
 func init() {
 	proto.RegisterType((*ForkApplyEvent)(nil), "github.ForkApplyEvent")
 }
 
-func init() { proto.RegisterFile("fork_apply_event.proto", fileDescriptor10) }
+func init() { proto.RegisterFile("fork_apply_event.proto", fileDescriptor11) }
 
-var fileDescriptor10 = []byte{
+var fileDescriptor11 = []byte{
 	// 118 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x4b, 0xcb, 0x2f, 0xca,
 	0x8e, 0x4f, 0x2c, 0x28, 0xc8, 0xa9, 0x8c, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca,

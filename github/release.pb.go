@@ -31,7 +31,7 @@ type Asset struct {
 func (m *Asset) Reset()                    { *m = Asset{} }
 func (m *Asset) String() string            { return proto.CompactTextString(m) }
 func (*Asset) ProtoMessage()               {}
-func (*Asset) Descriptor() ([]byte, []int) { return fileDescriptor27, []int{0} }
+func (*Asset) Descriptor() ([]byte, []int) { return fileDescriptor28, []int{0} }
 
 func (m *Asset) GetUploader() *User {
 	if m != nil {
@@ -63,7 +63,7 @@ type Release struct {
 func (m *Release) Reset()                    { *m = Release{} }
 func (m *Release) String() string            { return proto.CompactTextString(m) }
 func (*Release) ProtoMessage()               {}
-func (*Release) Descriptor() ([]byte, []int) { return fileDescriptor27, []int{1} }
+func (*Release) Descriptor() ([]byte, []int) { return fileDescriptor28, []int{1} }
 
 func (m *Release) GetAuthor() *User {
 	if m != nil {
@@ -84,9 +84,9 @@ func init() {
 	proto.RegisterType((*Release)(nil), "github.Release")
 }
 
-func init() { proto.RegisterFile("release.proto", fileDescriptor27) }
+func init() { proto.RegisterFile("release.proto", fileDescriptor28) }
 
-var fileDescriptor27 = []byte{
+var fileDescriptor28 = []byte{
 	// 471 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x6c, 0x93, 0xcf, 0x6e, 0xd3, 0x40,
 	0x10, 0xc6, 0xd5, 0x38, 0x71, 0x9c, 0xc9, 0x9f, 0x86, 0x55, 0x0f, 0x0b, 0x12, 0x50, 0x2a, 0x90,

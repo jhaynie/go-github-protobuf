@@ -20,7 +20,7 @@ type PullRequestReviewCommentLink struct {
 func (m *PullRequestReviewCommentLink) Reset()                    { *m = PullRequestReviewCommentLink{} }
 func (m *PullRequestReviewCommentLink) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewCommentLink) ProtoMessage()               {}
-func (*PullRequestReviewCommentLink) Descriptor() ([]byte, []int) { return fileDescriptor23, []int{0} }
+func (*PullRequestReviewCommentLink) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{0} }
 
 type PullRequestReviewCommentLinks struct {
 	Self        *PullRequestReviewCommentLink `protobuf:"bytes,1,opt,name=self" json:"self,omitempty"`
@@ -31,7 +31,7 @@ type PullRequestReviewCommentLinks struct {
 func (m *PullRequestReviewCommentLinks) Reset()                    { *m = PullRequestReviewCommentLinks{} }
 func (m *PullRequestReviewCommentLinks) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewCommentLinks) ProtoMessage()               {}
-func (*PullRequestReviewCommentLinks) Descriptor() ([]byte, []int) { return fileDescriptor23, []int{1} }
+func (*PullRequestReviewCommentLinks) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{1} }
 
 func (m *PullRequestReviewCommentLinks) GetSelf() *PullRequestReviewCommentLink {
 	if m != nil {
@@ -75,7 +75,7 @@ type PullRequestReviewComment struct {
 func (m *PullRequestReviewComment) Reset()                    { *m = PullRequestReviewComment{} }
 func (m *PullRequestReviewComment) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewComment) ProtoMessage()               {}
-func (*PullRequestReviewComment) Descriptor() ([]byte, []int) { return fileDescriptor23, []int{2} }
+func (*PullRequestReviewComment) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{2} }
 
 func (m *PullRequestReviewComment) GetUser() *User {
 	if m != nil {
@@ -102,7 +102,7 @@ type PullRequestReviewCommentEvent struct {
 func (m *PullRequestReviewCommentEvent) Reset()                    { *m = PullRequestReviewCommentEvent{} }
 func (m *PullRequestReviewCommentEvent) String() string            { return proto.CompactTextString(m) }
 func (*PullRequestReviewCommentEvent) ProtoMessage()               {}
-func (*PullRequestReviewCommentEvent) Descriptor() ([]byte, []int) { return fileDescriptor23, []int{3} }
+func (*PullRequestReviewCommentEvent) Descriptor() ([]byte, []int) { return fileDescriptor24, []int{3} }
 
 func (m *PullRequestReviewCommentEvent) GetComment() *PullRequestReviewComment {
 	if m != nil {
@@ -139,9 +139,9 @@ func init() {
 	proto.RegisterType((*PullRequestReviewCommentEvent)(nil), "github.PullRequestReviewCommentEvent")
 }
 
-func init() { proto.RegisterFile("pull_request_review_comment_event.proto", fileDescriptor23) }
+func init() { proto.RegisterFile("pull_request_review_comment_event.proto", fileDescriptor24) }
 
-var fileDescriptor23 = []byte{
+var fileDescriptor24 = []byte{
 	// 505 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x94, 0x54, 0x5f, 0x6b, 0x13, 0x41,
 	0x10, 0x27, 0xff, 0x2e, 0xc9, 0x24, 0xc6, 0x74, 0x04, 0x39, 0xa3, 0x85, 0x10, 0x2a, 0x16, 0x94,

@@ -23,7 +23,7 @@ type CommitCommentEvent struct {
 func (m *CommitCommentEvent) Reset()                    { *m = CommitCommentEvent{} }
 func (m *CommitCommentEvent) String() string            { return proto.CompactTextString(m) }
 func (*CommitCommentEvent) ProtoMessage()               {}
-func (*CommitCommentEvent) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{0} }
+func (*CommitCommentEvent) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{0} }
 
 func (m *CommitCommentEvent) GetComment() *Comment {
 	if m != nil {
@@ -50,9 +50,9 @@ func init() {
 	proto.RegisterType((*CommitCommentEvent)(nil), "github.CommitCommentEvent")
 }
 
-func init() { proto.RegisterFile("commit_comment_event.proto", fileDescriptor1) }
+func init() { proto.RegisterFile("commit_comment_event.proto", fileDescriptor2) }
 
-var fileDescriptor1 = []byte{
+var fileDescriptor2 = []byte{
 	// 185 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x92, 0x4a, 0xce, 0xcf, 0xcd,
 	0xcd, 0x2c, 0x89, 0x07, 0x51, 0xa9, 0x79, 0x25, 0xf1, 0xa9, 0x65, 0x40, 0x52, 0xaf, 0xa0, 0x28,

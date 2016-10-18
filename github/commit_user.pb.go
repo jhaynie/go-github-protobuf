@@ -22,15 +22,15 @@ type CommitUser struct {
 func (m *CommitUser) Reset()                    { *m = CommitUser{} }
 func (m *CommitUser) String() string            { return proto.CompactTextString(m) }
 func (*CommitUser) ProtoMessage()               {}
-func (*CommitUser) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{0} }
+func (*CommitUser) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{0} }
 
 func init() {
 	proto.RegisterType((*CommitUser)(nil), "github.CommitUser")
 }
 
-func init() { proto.RegisterFile("commit_user.proto", fileDescriptor2) }
+func init() { proto.RegisterFile("commit_user.proto", fileDescriptor3) }
 
-var fileDescriptor2 = []byte{
+var fileDescriptor3 = []byte{
 	// 110 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x4c, 0xce, 0xcf, 0xcd,
 	0xcd, 0x2c, 0x89, 0x2f, 0x2d, 0x4e, 0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4b,

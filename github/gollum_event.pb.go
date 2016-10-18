@@ -25,7 +25,7 @@ type GollumPage struct {
 func (m *GollumPage) Reset()                    { *m = GollumPage{} }
 func (m *GollumPage) String() string            { return proto.CompactTextString(m) }
 func (*GollumPage) ProtoMessage()               {}
-func (*GollumPage) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{0} }
+func (*GollumPage) Descriptor() ([]byte, []int) { return fileDescriptor14, []int{0} }
 
 type GollumEvent struct {
 	Pages      []*GollumPage `protobuf:"bytes,1,rep,name=pages" json:"pages,omitempty"`
@@ -36,7 +36,7 @@ type GollumEvent struct {
 func (m *GollumEvent) Reset()                    { *m = GollumEvent{} }
 func (m *GollumEvent) String() string            { return proto.CompactTextString(m) }
 func (*GollumEvent) ProtoMessage()               {}
-func (*GollumEvent) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{1} }
+func (*GollumEvent) Descriptor() ([]byte, []int) { return fileDescriptor14, []int{1} }
 
 func (m *GollumEvent) GetPages() []*GollumPage {
 	if m != nil {
@@ -64,9 +64,9 @@ func init() {
 	proto.RegisterType((*GollumEvent)(nil), "github.GollumEvent")
 }
 
-func init() { proto.RegisterFile("gollum_event.proto", fileDescriptor13) }
+func init() { proto.RegisterFile("gollum_event.proto", fileDescriptor14) }
 
-var fileDescriptor13 = []byte{
+var fileDescriptor14 = []byte{
 	// 257 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x4c, 0x50, 0x4d, 0x4a, 0xc4, 0x30,
 	0x18, 0xa5, 0xd6, 0xc6, 0x99, 0xaf, 0x2e, 0x86, 0x0f, 0x91, 0x38, 0x6e, 0x64, 0x70, 0xd1, 0x55,

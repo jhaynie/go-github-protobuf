@@ -22,7 +22,7 @@ type RepositoryPermission struct {
 func (m *RepositoryPermission) Reset()                    { *m = RepositoryPermission{} }
 func (m *RepositoryPermission) String() string            { return proto.CompactTextString(m) }
 func (*RepositoryPermission) ProtoMessage()               {}
-func (*RepositoryPermission) Descriptor() ([]byte, []int) { return fileDescriptor29, []int{0} }
+func (*RepositoryPermission) Descriptor() ([]byte, []int) { return fileDescriptor30, []int{0} }
 
 type Repository struct {
 	Id               int32                 `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
@@ -104,7 +104,7 @@ type Repository struct {
 func (m *Repository) Reset()                    { *m = Repository{} }
 func (m *Repository) String() string            { return proto.CompactTextString(m) }
 func (*Repository) ProtoMessage()               {}
-func (*Repository) Descriptor() ([]byte, []int) { return fileDescriptor29, []int{1} }
+func (*Repository) Descriptor() ([]byte, []int) { return fileDescriptor30, []int{1} }
 
 func (m *Repository) GetOwner() *User {
 	if m != nil {
@@ -146,9 +146,9 @@ func init() {
 	proto.RegisterType((*Repository)(nil), "github.Repository")
 }
 
-func init() { proto.RegisterFile("repository.proto", fileDescriptor29) }
+func init() { proto.RegisterFile("repository.proto", fileDescriptor30) }
 
-var fileDescriptor29 = []byte{
+var fileDescriptor30 = []byte{
 	// 1122 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x74, 0x56, 0x69, 0x73, 0xd4, 0x36,
 	0x18, 0x1e, 0x8e, 0x5c, 0xca, 0x26, 0xd9, 0x98, 0xb4, 0x88, 0x00, 0x25, 0x84, 0x02, 0xe1, 0x68,

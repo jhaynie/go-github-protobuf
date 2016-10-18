@@ -24,7 +24,7 @@ type DeleteEvent struct {
 func (m *DeleteEvent) Reset()                    { *m = DeleteEvent{} }
 func (m *DeleteEvent) String() string            { return proto.CompactTextString(m) }
 func (*DeleteEvent) ProtoMessage()               {}
-func (*DeleteEvent) Descriptor() ([]byte, []int) { return fileDescriptor4, []int{0} }
+func (*DeleteEvent) Descriptor() ([]byte, []int) { return fileDescriptor5, []int{0} }
 
 func (m *DeleteEvent) GetRepository() *Repository {
 	if m != nil {
@@ -44,9 +44,9 @@ func init() {
 	proto.RegisterType((*DeleteEvent)(nil), "github.DeleteEvent")
 }
 
-func init() { proto.RegisterFile("delete_event.proto", fileDescriptor4) }
+func init() { proto.RegisterFile("delete_event.proto", fileDescriptor5) }
 
-var fileDescriptor4 = []byte{
+var fileDescriptor5 = []byte{
 	// 191 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x4a, 0x49, 0xcd, 0x49,
 	0x2d, 0x49, 0x8d, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62,

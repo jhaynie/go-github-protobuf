@@ -27,15 +27,15 @@ type Team struct {
 func (m *Team) Reset()                    { *m = Team{} }
 func (m *Team) String() string            { return proto.CompactTextString(m) }
 func (*Team) ProtoMessage()               {}
-func (*Team) Descriptor() ([]byte, []int) { return fileDescriptor32, []int{0} }
+func (*Team) Descriptor() ([]byte, []int) { return fileDescriptor33, []int{0} }
 
 func init() {
 	proto.RegisterType((*Team)(nil), "github.Team")
 }
 
-func init() { proto.RegisterFile("team.proto", fileDescriptor32) }
+func init() { proto.RegisterFile("team.proto", fileDescriptor33) }
 
-var fileDescriptor32 = []byte{
+var fileDescriptor33 = []byte{
 	// 186 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x4c, 0x8f, 0x3d, 0x8e, 0xc2, 0x30,
 	0x10, 0x46, 0x95, 0xdf, 0xdd, 0x9d, 0x48, 0x4b, 0x34, 0x95, 0x2b, 0x88, 0xa8, 0xa0, 0xa1, 0xe1,

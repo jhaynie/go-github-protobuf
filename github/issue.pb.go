@@ -22,7 +22,7 @@ type Label struct {
 func (m *Label) Reset()                    { *m = Label{} }
 func (m *Label) String() string            { return proto.CompactTextString(m) }
 func (*Label) ProtoMessage()               {}
-func (*Label) Descriptor() ([]byte, []int) { return fileDescriptor14, []int{0} }
+func (*Label) Descriptor() ([]byte, []int) { return fileDescriptor15, []int{0} }
 
 type Issue struct {
 	Id            int32      `protobuf:"varint,1,opt,name=id" json:"id,omitempty"`
@@ -51,7 +51,7 @@ type Issue struct {
 func (m *Issue) Reset()                    { *m = Issue{} }
 func (m *Issue) String() string            { return proto.CompactTextString(m) }
 func (*Issue) ProtoMessage()               {}
-func (*Issue) Descriptor() ([]byte, []int) { return fileDescriptor14, []int{1} }
+func (*Issue) Descriptor() ([]byte, []int) { return fileDescriptor15, []int{1} }
 
 func (m *Issue) GetUser() *User {
 	if m != nil {
@@ -93,9 +93,9 @@ func init() {
 	proto.RegisterType((*Issue)(nil), "github.Issue")
 }
 
-func init() { proto.RegisterFile("issue.proto", fileDescriptor14) }
+func init() { proto.RegisterFile("issue.proto", fileDescriptor15) }
 
-var fileDescriptor14 = []byte{
+var fileDescriptor15 = []byte{
 	// 414 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x6c, 0x92, 0x4f, 0x6f, 0xd3, 0x40,
 	0x10, 0xc5, 0xd5, 0x24, 0x76, 0xed, 0x71, 0x92, 0xb6, 0x4b, 0x41, 0x4b, 0x10, 0x52, 0xa8, 0x84,

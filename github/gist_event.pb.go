@@ -25,7 +25,7 @@ type GistFile struct {
 func (m *GistFile) Reset()                    { *m = GistFile{} }
 func (m *GistFile) String() string            { return proto.CompactTextString(m) }
 func (*GistFile) ProtoMessage()               {}
-func (*GistFile) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{0} }
+func (*GistFile) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{0} }
 
 type GistFork struct {
 	User      *User  `protobuf:"bytes,1,opt,name=user" json:"user,omitempty"`
@@ -38,7 +38,7 @@ type GistFork struct {
 func (m *GistFork) Reset()                    { *m = GistFork{} }
 func (m *GistFork) String() string            { return proto.CompactTextString(m) }
 func (*GistFork) ProtoMessage()               {}
-func (*GistFork) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{1} }
+func (*GistFork) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{1} }
 
 func (m *GistFork) GetUser() *User {
 	if m != nil {
@@ -56,7 +56,7 @@ type GistChangeStatus struct {
 func (m *GistChangeStatus) Reset()                    { *m = GistChangeStatus{} }
 func (m *GistChangeStatus) String() string            { return proto.CompactTextString(m) }
 func (*GistChangeStatus) ProtoMessage()               {}
-func (*GistChangeStatus) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{2} }
+func (*GistChangeStatus) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{2} }
 
 type GistHistory struct {
 	Url          string            `protobuf:"bytes,1,opt,name=url" json:"url,omitempty"`
@@ -69,7 +69,7 @@ type GistHistory struct {
 func (m *GistHistory) Reset()                    { *m = GistHistory{} }
 func (m *GistHistory) String() string            { return proto.CompactTextString(m) }
 func (*GistHistory) ProtoMessage()               {}
-func (*GistHistory) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{3} }
+func (*GistHistory) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{3} }
 
 func (m *GistHistory) GetUser() *User {
 	if m != nil {
@@ -109,7 +109,7 @@ type Gist struct {
 func (m *Gist) Reset()                    { *m = Gist{} }
 func (m *Gist) String() string            { return proto.CompactTextString(m) }
 func (*Gist) ProtoMessage()               {}
-func (*Gist) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{4} }
+func (*Gist) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{4} }
 
 func (m *Gist) GetOwner() *User {
 	if m != nil {
@@ -147,7 +147,7 @@ type GistEvent struct {
 func (m *GistEvent) Reset()                    { *m = GistEvent{} }
 func (m *GistEvent) String() string            { return proto.CompactTextString(m) }
 func (*GistEvent) ProtoMessage()               {}
-func (*GistEvent) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{5} }
+func (*GistEvent) Descriptor() ([]byte, []int) { return fileDescriptor13, []int{5} }
 
 func (m *GistEvent) GetGist() *Gist {
 	if m != nil {
@@ -165,9 +165,9 @@ func init() {
 	proto.RegisterType((*GistEvent)(nil), "github.GistEvent")
 }
 
-func init() { proto.RegisterFile("gist_event.proto", fileDescriptor12) }
+func init() { proto.RegisterFile("gist_event.proto", fileDescriptor13) }
 
-var fileDescriptor12 = []byte{
+var fileDescriptor13 = []byte{
 	// 639 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x7c, 0x54, 0x4f, 0x6f, 0xd3, 0x4e,
 	0x10, 0x95, 0x93, 0x38, 0xb5, 0xc7, 0x6e, 0x7f, 0xf9, 0xad, 0x10, 0x35, 0x05, 0x44, 0xf0, 0x01,

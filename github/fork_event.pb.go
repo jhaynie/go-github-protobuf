@@ -22,7 +22,7 @@ type ForkEvent struct {
 func (m *ForkEvent) Reset()                    { *m = ForkEvent{} }
 func (m *ForkEvent) String() string            { return proto.CompactTextString(m) }
 func (*ForkEvent) ProtoMessage()               {}
-func (*ForkEvent) Descriptor() ([]byte, []int) { return fileDescriptor11, []int{0} }
+func (*ForkEvent) Descriptor() ([]byte, []int) { return fileDescriptor12, []int{0} }
 
 func (m *ForkEvent) GetForkee() *Repository {
 	if m != nil {
@@ -49,9 +49,9 @@ func init() {
 	proto.RegisterType((*ForkEvent)(nil), "github.ForkEvent")
 }
 
-func init() { proto.RegisterFile("fork_event.proto", fileDescriptor11) }
+func init() { proto.RegisterFile("fork_event.proto", fileDescriptor12) }
 
-var fileDescriptor11 = []byte{
+var fileDescriptor12 = []byte{
 	// 150 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x12, 0x48, 0xcb, 0x2f, 0xca,
 	0x8e, 0x4f, 0x2d, 0x4b, 0xcd, 0x2b, 0xd1, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4b, 0xcf,

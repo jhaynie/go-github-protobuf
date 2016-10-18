@@ -29,7 +29,7 @@ type DeploymentStatus struct {
 func (m *DeploymentStatus) Reset()                    { *m = DeploymentStatus{} }
 func (m *DeploymentStatus) String() string            { return proto.CompactTextString(m) }
 func (*DeploymentStatus) ProtoMessage()               {}
-func (*DeploymentStatus) Descriptor() ([]byte, []int) { return fileDescriptor7, []int{0} }
+func (*DeploymentStatus) Descriptor() ([]byte, []int) { return fileDescriptor8, []int{0} }
 
 func (m *DeploymentStatus) GetCreator() *User {
 	if m != nil {
@@ -48,7 +48,7 @@ type DeploymentStatusEvent struct {
 func (m *DeploymentStatusEvent) Reset()                    { *m = DeploymentStatusEvent{} }
 func (m *DeploymentStatusEvent) String() string            { return proto.CompactTextString(m) }
 func (*DeploymentStatusEvent) ProtoMessage()               {}
-func (*DeploymentStatusEvent) Descriptor() ([]byte, []int) { return fileDescriptor7, []int{1} }
+func (*DeploymentStatusEvent) Descriptor() ([]byte, []int) { return fileDescriptor8, []int{1} }
 
 func (m *DeploymentStatusEvent) GetDeploymentStatus() *DeploymentStatus {
 	if m != nil {
@@ -83,9 +83,9 @@ func init() {
 	proto.RegisterType((*DeploymentStatusEvent)(nil), "github.DeploymentStatusEvent")
 }
 
-func init() { proto.RegisterFile("deployment_status_event.proto", fileDescriptor7) }
+func init() { proto.RegisterFile("deployment_status_event.proto", fileDescriptor8) }
 
-var fileDescriptor7 = []byte{
+var fileDescriptor8 = []byte{
 	// 331 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x6c, 0x92, 0xdf, 0x6a, 0xc2, 0x30,
 	0x14, 0xc6, 0x51, 0x67, 0x9d, 0xa7, 0x9b, 0xb8, 0xb0, 0x41, 0x10, 0x04, 0x91, 0x6d, 0xec, 0xca,

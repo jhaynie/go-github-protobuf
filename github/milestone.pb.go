@@ -34,7 +34,7 @@ type Milestone struct {
 func (m *Milestone) Reset()                    { *m = Milestone{} }
 func (m *Milestone) String() string            { return proto.CompactTextString(m) }
 func (*Milestone) ProtoMessage()               {}
-func (*Milestone) Descriptor() ([]byte, []int) { return fileDescriptor19, []int{0} }
+func (*Milestone) Descriptor() ([]byte, []int) { return fileDescriptor20, []int{0} }
 
 func (m *Milestone) GetCreator() *User {
 	if m != nil {
@@ -47,9 +47,9 @@ func init() {
 	proto.RegisterType((*Milestone)(nil), "github.Milestone")
 }
 
-func init() { proto.RegisterFile("milestone.proto", fileDescriptor19) }
+func init() { proto.RegisterFile("milestone.proto", fileDescriptor20) }
 
-var fileDescriptor19 = []byte{
+var fileDescriptor20 = []byte{
 	// 301 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x4c, 0x91, 0x4d, 0x4b, 0xc3, 0x40,
 	0x10, 0x86, 0x69, 0x6b, 0xd3, 0x66, 0xd2, 0x0f, 0x59, 0x54, 0x56, 0x45, 0x2c, 0x0a, 0xe2, 0xa9,

@@ -24,7 +24,7 @@ type RepositoryRef struct {
 func (m *RepositoryRef) Reset()                    { *m = RepositoryRef{} }
 func (m *RepositoryRef) String() string            { return proto.CompactTextString(m) }
 func (*RepositoryRef) ProtoMessage()               {}
-func (*RepositoryRef) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{0} }
+func (*RepositoryRef) Descriptor() ([]byte, []int) { return fileDescriptor26, []int{0} }
 
 func (m *RepositoryRef) GetUser() *User {
 	if m != nil {
@@ -47,7 +47,7 @@ type LinkHref struct {
 func (m *LinkHref) Reset()                    { *m = LinkHref{} }
 func (m *LinkHref) String() string            { return proto.CompactTextString(m) }
 func (*LinkHref) ProtoMessage()               {}
-func (*LinkHref) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{1} }
+func (*LinkHref) Descriptor() ([]byte, []int) { return fileDescriptor26, []int{1} }
 
 type Links struct {
 	Self           *LinkHref `protobuf:"bytes,1,opt,name=self" json:"self,omitempty"`
@@ -63,7 +63,7 @@ type Links struct {
 func (m *Links) Reset()                    { *m = Links{} }
 func (m *Links) String() string            { return proto.CompactTextString(m) }
 func (*Links) ProtoMessage()               {}
-func (*Links) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{2} }
+func (*Links) Descriptor() ([]byte, []int) { return fileDescriptor26, []int{2} }
 
 func (m *Links) GetSelf() *LinkHref {
 	if m != nil {
@@ -162,7 +162,7 @@ type PullRequest struct {
 func (m *PullRequest) Reset()                    { *m = PullRequest{} }
 func (m *PullRequest) String() string            { return proto.CompactTextString(m) }
 func (*PullRequest) ProtoMessage()               {}
-func (*PullRequest) Descriptor() ([]byte, []int) { return fileDescriptor25, []int{3} }
+func (*PullRequest) Descriptor() ([]byte, []int) { return fileDescriptor26, []int{3} }
 
 func (m *PullRequest) GetAssignee() *User {
 	if m != nil {
@@ -220,9 +220,9 @@ func init() {
 	proto.RegisterType((*PullRequest)(nil), "github.PullRequest")
 }
 
-func init() { proto.RegisterFile("pullrequest.proto", fileDescriptor25) }
+func init() { proto.RegisterFile("pullrequest.proto", fileDescriptor26) }
 
-var fileDescriptor25 = []byte{
+var fileDescriptor26 = []byte{
 	// 759 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x7c, 0x95, 0x4b, 0x6f, 0xd3, 0x40,
 	0x10, 0xc7, 0xd5, 0x36, 0x0f, 0x67, 0xf2, 0x68, 0xb2, 0x7d, 0xb0, 0x4d, 0xdf, 0x29, 0x42, 0x2d,

@@ -7,6 +7,7 @@ Package github is a generated protocol buffer package.
 
 It is generated from these files:
 	comment.proto
+	commit.proto
 	commit_comment_event.proto
 	commit_user.proto
 	create_event.proto
@@ -45,6 +46,14 @@ It is generated from these files:
 
 It has these top-level messages:
 	Comment
+	CommitDetailTree
+	CommitLanguage
+	CommitLinguist
+	CommitFramework
+	CommitLicense
+	CommitFileDetail
+	CommitDetail
+	Commit
 	CommitCommentEvent
 	CommitUser
 	CreateEvent
@@ -90,7 +99,7 @@ It has these top-level messages:
 	LinkHref
 	Links
 	PullRequest
-	Commit
+	PushCommit
 	PushEvent
 	Asset
 	Release
@@ -98,10 +107,10 @@ It has these top-level messages:
 	RepositoryPermission
 	Repository
 	RepositoryEvent
-	CommitDetailTree
-	CommitBranch
-	CommitDetail
-	CommitUpdate
+	StatusCommitDetailTree
+	StatusCommitBranch
+	StatusCommitDetail
+	StatusCommitUpdate
 	StatusEvent
 	Team
 	TeamAddEvent
