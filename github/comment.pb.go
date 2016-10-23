@@ -47,7 +47,6 @@
 	It has these top-level messages:
 		Comment
 		CommitDetailTree
-		CommitLanguage
 		CommitLinguist
 		CommitFramework
 		CommitLicense
