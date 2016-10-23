@@ -11,7 +11,7 @@ option (gogoproto.sizer_all) = true;
 option (gogoproto.unmarshaler_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
-import "user.proto";
+import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 
 message Deployment {
 	string url = 1;
