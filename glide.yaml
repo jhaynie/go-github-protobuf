@@ -1,0 +1,9 @@
+package: github.com/jhaynie/go-github-protobuf
+import:
+- package: github.com/gogo/protobuf
+  version: ~0.3.0
+  subpackages:
+  - gogoproto
+- package: github.com/golang/protobuf
+  subpackages:
+  - proto
