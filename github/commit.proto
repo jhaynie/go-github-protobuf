@@ -46,7 +46,7 @@ message CommitLicense {
 	string name = 2;
 	string url = 3;
 	bool osiApproved = 4;
-	string proprietary = 5;
+	string license = 5;
 }
 
 message CommitFileDetail {
