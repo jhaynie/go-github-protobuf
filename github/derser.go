@@ -50,6 +50,7 @@ var (
 		"member":                                "MemberEvent",
 		"membership":                            "MembershipEvent",
 		"page_build":                            "PageBuildEvent",
+		"ping":                                  "Ping",
 		"public":                                "PublicEvent",
 		"pull_request_review_comment":           "PullRequestReviewCommentEvent",
 		"pull_request":                          "PullRequestEvent",
@@ -275,6 +276,8 @@ func (e *Event) Payload() (payload interface{}) {
 		payload = &MembershipEvent{}
 	case "PageBuildEvent":
 		payload = &PageBuildEvent{}
+	case "Ping":
+		payload = &Ping{}
 	case "PublicEvent":
 		payload = &PublicEvent{}
 	case "PullRequestEvent":
