@@ -21,18 +21,22 @@
 		fork_event.proto
 		gist_event.proto
 		gollum_event.proto
+		integration_installation.proto
+		integration_installation_repositories.proto
 		issue.proto
 		issue_comment_event.proto
 		issues_event.proto
 		member_event.proto
 		membership_event.proto
+		message.proto
 		milestone.proto
 		page_build_event.proto
+		ping.proto
 		public_event.proto
+		pull_request.proto
 		pull_request_event.proto
 		pull_request_review_comment_event.proto
 		pull_request_review_event.proto
-		pullrequest.proto
 		push_event.proto
 		release.proto
 		release_event.proto
@@ -40,7 +44,7 @@
 		repository_event.proto
 		status_event.proto
 		team.proto
-		team_add.proto
+		team_add_event.proto
 		user.proto
 		watch_event.proto
 
@@ -74,17 +78,28 @@
 		GistEvent
 		GollumPage
 		GollumEvent
+		Installation
+		IntegrationInstallation
+		InstallationRepo
+		IntegrationInstallationRepositories
 		Label
 		Issue
 		IssueCommentEvent
 		IssuesEvent
 		MemberEvent
 		MembershipEvent
+		Message
 		Milestone
 		BuildError
 		Build
 		PageBuildEvent
+		Hook
+		Ping
 		PublicEvent
+		RepositoryRef
+		LinkHref
+		Links
+		PullRequest
 		PullRequestEvent
 		PullRequestReviewCommentLink
 		PullRequestReviewCommentLinks
@@ -94,10 +109,6 @@
 		PullRequestReviewLinks
 		PullRequestReview
 		PullRequestReviewEvent
-		RepositoryRef
-		LinkHref
-		Links
-		PullRequest
 		PushCommit
 		PushEvent
 		Asset
