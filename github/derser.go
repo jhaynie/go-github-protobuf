@@ -260,10 +260,10 @@ func (e *Event) Payload() (payload interface{}) {
 		payload = &ForkEvent{}
 	case "GollumEvent":
 		payload = &GollumEvent{}
-	// case "IntegrationInstallationEvent":
-	// 	payload = &IntegrationInstallationEvent{}
-	// case "IntegrationInstallationRepositoriesEvent":
-	// 	payload = &IntegrationInstallationRepositoriesEvent{}
+	case "IntegrationInstallationEvent":
+		payload = &IntegrationInstallation{}
+	case "IntegrationInstallationRepositoriesEvent":
+		payload = &IntegrationInstallationRepositories{}
 	// case "IssueActivityEvent":
 	// 	payload = &IssueActivityEvent{}
 	case "IssueCommentEvent":
