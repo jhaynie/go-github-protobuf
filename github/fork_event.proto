@@ -13,9 +13,11 @@ option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 import "github.com/jhaynie/go-github-protobuf/github/repository.proto";
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message ForkEvent {
 	Repository forkee = 1;
 	Repository repository = 2;
 	User sender = 3;
+	Installation installation = 4;
 }

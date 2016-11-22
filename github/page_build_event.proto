@@ -13,6 +13,7 @@ option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 import "github.com/jhaynie/go-github-protobuf/github/repository.proto";
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message BuildError {
 	string message = 1;
@@ -34,4 +35,5 @@ message PageBuildEvent {
 	Build build = 2;
 	Repository repository = 3;
 	User sender = 4;
+	Installation installation = 5;
 }

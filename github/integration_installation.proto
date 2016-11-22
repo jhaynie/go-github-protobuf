@@ -12,14 +12,7 @@ option (gogoproto.unmarshaler_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
-
-message Installation {
-	int32 id = 1;
-	User account = 2;
-	string access_tokens_url = 3;
-	string repositories_url = 4;
-	string html_url = 5;
-}
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message IntegrationInstallation {
 	string action = 1;

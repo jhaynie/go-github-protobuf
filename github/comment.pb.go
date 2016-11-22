@@ -21,6 +21,7 @@
 		fork_event.proto
 		gist_event.proto
 		gollum_event.proto
+		installation.proto
 		integration_installation.proto
 		integration_installation_repositories.proto
 		issue.proto

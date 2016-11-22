@@ -13,6 +13,7 @@ option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 import "github.com/jhaynie/go-github-protobuf/github/team.proto";
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message MembershipEvent {
 	string action = 1;
@@ -21,4 +22,5 @@ message MembershipEvent {
 	User sender = 4;
 	Team team = 5;
 	User organization = 6;
+	Installation installation = 7;
 }

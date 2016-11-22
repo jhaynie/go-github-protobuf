@@ -12,7 +12,7 @@ option (gogoproto.unmarshaler_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
-import "github.com/jhaynie/go-github-protobuf/github/integration_installation.proto";
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message InstallationRepo {
 	int32 id = 1;

@@ -1,8 +1,5 @@
 syntax = "proto3";
 
-// NOTE: this event is deprecated but provided for older timelines
-// https://developer.github.com/v3/activity/events/types/#followevent
-
 package github;
 
 import "github.com/gogo/protobuf/gogoproto/gogo.proto";
@@ -13,9 +10,11 @@ option (gogoproto.unmarshaler_all) = true;
 option (gogoproto.goproto_getters_all) = false;
 
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
-import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
-message FollowEvent {
-	User target = 1;
-	Installation installation = 2;
+message Installation {
+	int32 id = 1;
+	User account = 2;
+	string access_tokens_url = 3;
+	string repositories_url = 4;
+	string html_url = 5;
 }

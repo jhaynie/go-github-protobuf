@@ -16,21 +16,6 @@ var _ = proto.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
-type Installation struct {
-	Id              int32  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Account         *User  `protobuf:"bytes,2,opt,name=account" json:"account,omitempty"`
-	AccessTokensUrl string `protobuf:"bytes,3,opt,name=access_tokens_url,json=accessTokensUrl,proto3" json:"access_tokens_url,omitempty"`
-	RepositoriesUrl string `protobuf:"bytes,4,opt,name=repositories_url,json=repositoriesUrl,proto3" json:"repositories_url,omitempty"`
-	HtmlUrl         string `protobuf:"bytes,5,opt,name=html_url,json=htmlUrl,proto3" json:"html_url,omitempty"`
-}
-
-func (m *Installation) Reset()         { *m = Installation{} }
-func (m *Installation) String() string { return proto.CompactTextString(m) }
-func (*Installation) ProtoMessage()    {}
-func (*Installation) Descriptor() ([]byte, []int) {
-	return fileDescriptorIntegrationInstallation, []int{0}
-}
-
 type IntegrationInstallation struct {
 	Action       string        `protobuf:"bytes,1,opt,name=action,proto3" json:"action,omitempty"`
 	Installation *Installation `protobuf:"bytes,2,opt,name=installation" json:"installation,omitempty"`
@@ -41,64 +26,12 @@ func (m *IntegrationInstallation) Reset()         { *m = IntegrationInstallation
 func (m *IntegrationInstallation) String() string { return proto.CompactTextString(m) }
 func (*IntegrationInstallation) ProtoMessage()    {}
 func (*IntegrationInstallation) Descriptor() ([]byte, []int) {
-	return fileDescriptorIntegrationInstallation, []int{1}
+	return fileDescriptorIntegrationInstallation, []int{0}
 }
 
 func init() {
-	proto.RegisterType((*Installation)(nil), "github.Installation")
 	proto.RegisterType((*IntegrationInstallation)(nil), "github.IntegrationInstallation")
 }
-func (m *Installation) Marshal() (data []byte, err error) {
-	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
-	if err != nil {
-		return nil, err
-	}
-	return data[:n], nil
-}
-
-func (m *Installation) MarshalTo(data []byte) (int, error) {
-	var i int
-	_ = i
-	var l int
-	_ = l
-	if m.Id != 0 {
-		data[i] = 0x8
-		i++
-		i = encodeVarintIntegrationInstallation(data, i, uint64(m.Id))
-	}
-	if m.Account != nil {
-		data[i] = 0x12
-		i++
-		i = encodeVarintIntegrationInstallation(data, i, uint64(m.Account.Size()))
-		n1, err := m.Account.MarshalTo(data[i:])
-		if err != nil {
-			return 0, err
-		}
-		i += n1
-	}
-	if len(m.AccessTokensUrl) > 0 {
-		data[i] = 0x1a
-		i++
-		i = encodeVarintIntegrationInstallation(data, i, uint64(len(m.AccessTokensUrl)))
-		i += copy(data[i:], m.AccessTokensUrl)
-	}
-	if len(m.RepositoriesUrl) > 0 {
-		data[i] = 0x22
-		i++
-		i = encodeVarintIntegrationInstallation(data, i, uint64(len(m.RepositoriesUrl)))
-		i += copy(data[i:], m.RepositoriesUrl)
-	}
-	if len(m.HtmlUrl) > 0 {
-		data[i] = 0x2a
-		i++
-		i = encodeVarintIntegrationInstallation(data, i, uint64(len(m.HtmlUrl)))
-		i += copy(data[i:], m.HtmlUrl)
-	}
-	return i, nil
-}
-
 func (m *IntegrationInstallation) Marshal() (data []byte, err error) {
 	size := m.Size()
 	data = make([]byte, size)
@@ -124,21 +57,21 @@ func (m *IntegrationInstallation) MarshalTo(data []byte) (int, error) {
 		data[i] = 0x12
 		i++
 		i = encodeVarintIntegrationInstallation(data, i, uint64(m.Installation.Size()))
-		n2, err := m.Installation.MarshalTo(data[i:])
+		n1, err := m.Installation.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n2
+		i += n1
 	}
 	if m.Sender != nil {
 		data[i] = 0x1a
 		i++
 		i = encodeVarintIntegrationInstallation(data, i, uint64(m.Sender.Size()))
-		n3, err := m.Sender.MarshalTo(data[i:])
+		n2, err := m.Sender.MarshalTo(data[i:])
 		if err != nil {
 			return 0, err
 		}
-		i += n3
+		i += n2
 	}
 	return i, nil
 }
@@ -170,31 +103,6 @@ func encodeVarintIntegrationInstallation(data []byte, offset int, v uint64) int 
 	data[offset] = uint8(v)
 	return offset + 1
 }
-func (m *Installation) Size() (n int) {
-	var l int
-	_ = l
-	if m.Id != 0 {
-		n += 1 + sovIntegrationInstallation(uint64(m.Id))
-	}
-	if m.Account != nil {
-		l = m.Account.Size()
-		n += 1 + l + sovIntegrationInstallation(uint64(l))
-	}
-	l = len(m.AccessTokensUrl)
-	if l > 0 {
-		n += 1 + l + sovIntegrationInstallation(uint64(l))
-	}
-	l = len(m.RepositoriesUrl)
-	if l > 0 {
-		n += 1 + l + sovIntegrationInstallation(uint64(l))
-	}
-	l = len(m.HtmlUrl)
-	if l > 0 {
-		n += 1 + l + sovIntegrationInstallation(uint64(l))
-	}
-	return n
-}
-
 func (m *IntegrationInstallation) Size() (n int) {
 	var l int
 	_ = l
@@ -225,195 +133,6 @@ func sovIntegrationInstallation(x uint64) (n int) {
 }
 func sozIntegrationInstallation(x uint64) (n int) {
 	return sovIntegrationInstallation(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (m *Installation) Unmarshal(data []byte) error {
-	l := len(data)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowIntegrationInstallation
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := data[iNdEx]
-			iNdEx++
-			wire |= (uint64(b) & 0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Installation: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Installation: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
-			}
-			m.Id = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowIntegrationInstallation
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := data[iNdEx]
-				iNdEx++
-				m.Id |= (int32(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Account", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowIntegrationInstallation
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := data[iNdEx]
-				iNdEx++
-				msglen |= (int(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthIntegrationInstallation
-			}
-			postIndex := iNdEx + msglen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Account == nil {
-				m.Account = &User{}
-			}
-			if err := m.Account.Unmarshal(data[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field AccessTokensUrl", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowIntegrationInstallation
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := data[iNdEx]
-				iNdEx++
-				stringLen |= (uint64(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthIntegrationInstallation
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.AccessTokensUrl = string(data[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field RepositoriesUrl", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowIntegrationInstallation
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := data[iNdEx]
-				iNdEx++
-				stringLen |= (uint64(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthIntegrationInstallation
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.RepositoriesUrl = string(data[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field HtmlUrl", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowIntegrationInstallation
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := data[iNdEx]
-				iNdEx++
-				stringLen |= (uint64(b) & 0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthIntegrationInstallation
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.HtmlUrl = string(data[iNdEx:postIndex])
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipIntegrationInstallation(data[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthIntegrationInstallation
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
 }
 func (m *IntegrationInstallation) Unmarshal(data []byte) error {
 	l := len(data)
@@ -670,24 +389,18 @@ func init() {
 }
 
 var fileDescriptorIntegrationInstallation = []byte{
-	// 299 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x5c, 0x50, 0x3b, 0x4e, 0xc3, 0x40,
-	0x14, 0x8c, 0x03, 0x71, 0xc8, 0xc3, 0xe2, 0xb3, 0x8a, 0xc0, 0xa4, 0xb0, 0x50, 0x84, 0x10, 0x20,
-	0xe1, 0x48, 0xd0, 0x50, 0xd3, 0xa5, 0xb5, 0x48, 0x6d, 0xd9, 0xce, 0xe2, 0xac, 0x70, 0x76, 0xa3,
-	0xfd, 0x1c, 0x84, 0x8e, 0xa3, 0x70, 0x84, 0x94, 0x1c, 0x81, 0xcf, 0x45, 0x58, 0xbf, 0x75, 0x84,
-	0x43, 0xb1, 0xf2, 0xcc, 0x9b, 0x79, 0xcf, 0x9a, 0x81, 0x88, 0x71, 0x4d, 0x4b, 0x99, 0x69, 0x26,
-	0x78, 0xca, 0xb8, 0xd2, 0x59, 0x55, 0x21, 0x89, 0x57, 0x52, 0x68, 0x41, 0xfc, 0x92, 0xe9, 0x85,
-	0xc9, 0x47, 0xb7, 0xee, 0x1b, 0x17, 0x62, 0x39, 0x29, 0x45, 0x29, 0x26, 0x28, 0xe7, 0xe6, 0x19,
-	0x19, 0x12, 0x44, 0x6e, 0x6d, 0x04, 0x46, 0x51, 0xe9, 0xf0, 0xf8, 0xdd, 0x83, 0x60, 0xda, 0xba,
-	0x4c, 0x0e, 0xa0, 0xcb, 0xe6, 0xa1, 0x77, 0xee, 0x5d, 0xf5, 0x12, 0x8b, 0xc8, 0x25, 0xf4, 0xb3,
-	0xa2, 0x10, 0x86, 0xeb, 0xb0, 0x6b, 0x87, 0xfb, 0x77, 0x41, 0xdc, 0xfc, 0x6d, 0x66, 0xaf, 0x24,
-	0x1b, 0x91, 0xdc, 0xc0, 0xb1, 0x85, 0x54, 0xa9, 0x54, 0x8b, 0x17, 0xca, 0x55, 0x6a, 0x64, 0x15,
-	0xee, 0xd8, 0x8d, 0x41, 0x72, 0xe8, 0x84, 0x27, 0x9c, 0xcf, 0x64, 0x45, 0xae, 0xe1, 0x48, 0xd2,
-	0x95, 0x50, 0x4c, 0x0b, 0xc9, 0xa8, 0xb3, 0xee, 0x3a, 0x6b, 0x7b, 0x5e, 0x5b, 0xcf, 0x60, 0x6f,
-	0xa1, 0x97, 0x15, 0x5a, 0x7a, 0x68, 0xe9, 0xd7, 0xdc, 0x4a, 0xe3, 0x57, 0x0f, 0x4e, 0xa7, 0x7f,
-	0x05, 0x6d, 0xa5, 0x38, 0x01, 0x3f, 0x2b, 0x6a, 0x84, 0x49, 0x06, 0x49, 0xc3, 0xc8, 0x03, 0x04,
-	0xed, 0x1e, 0x9b, 0x48, 0xc3, 0x4d, 0xa4, 0xf6, 0x8d, 0x64, 0xcb, 0x49, 0x2e, 0xc0, 0x57, 0x94,
-	0xcf, 0xa9, 0xc4, 0x50, 0xff, 0x6b, 0x68, 0xb4, 0xc7, 0xe1, 0xfa, 0x2b, 0xea, 0xac, 0xbf, 0x23,
-	0xef, 0xc3, 0xbe, 0x4f, 0xfb, 0xde, 0x7e, 0xa2, 0x4e, 0xee, 0x63, 0xd7, 0xf7, 0xbf, 0x01, 0x00,
-	0x00, 0xff, 0xff, 0xc6, 0x64, 0x67, 0xb2, 0xd0, 0x01, 0x00, 0x00,
+	// 196 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0x92, 0xcb, 0xcc, 0x2b, 0x49,
+	0x4d, 0x2f, 0x4a, 0x2c, 0xc9, 0xcc, 0xcf, 0x8b, 0xcf, 0xcc, 0x2b, 0x2e, 0x49, 0xcc, 0xc9, 0x01,
+	0x73, 0xf4, 0x0a, 0x8a, 0xf2, 0x4b, 0xf2, 0x85, 0xd8, 0xd2, 0x33, 0x4b, 0x32, 0x4a, 0x93, 0xa4,
+	0x74, 0x21, 0xb4, 0x5e, 0x72, 0x7e, 0xae, 0x7e, 0x7a, 0x7e, 0x7a, 0xbe, 0x3e, 0x58, 0x3a, 0xa9,
+	0x34, 0x0d, 0xcc, 0x03, 0x73, 0xc0, 0x2c, 0x88, 0x36, 0x29, 0xae, 0xd2, 0xe2, 0xd4, 0x22, 0x28,
+	0x5b, 0x08, 0xd3, 0x58, 0xa5, 0x89, 0x8c, 0x5c, 0xe2, 0x9e, 0x08, 0x9b, 0x3d, 0x91, 0x54, 0x08,
+	0x89, 0x71, 0xb1, 0x25, 0x26, 0x83, 0x58, 0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x41, 0x50, 0x9e,
+	0x90, 0x05, 0x17, 0x0f, 0xb2, 0x49, 0x12, 0x4c, 0x40, 0x59, 0x6e, 0x23, 0x11, 0x3d, 0xa8, 0xcb,
+	0x90, 0xcd, 0x08, 0x42, 0x51, 0x29, 0xa4, 0xc2, 0xc5, 0x56, 0x9c, 0x9a, 0x97, 0x92, 0x5a, 0x24,
+	0xc1, 0x0c, 0xd6, 0xc3, 0x03, 0xd3, 0x13, 0x0a, 0x74, 0x65, 0x10, 0x54, 0xce, 0x49, 0xe4, 0xc4,
+	0x43, 0x39, 0x86, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x00, 0xf1, 0x03, 0x20, 0x9e, 0xf1, 0x58, 0x8e,
+	0x21, 0x89, 0x0d, 0xec, 0x60, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x62, 0xce, 0x4e, 0x40,
+	0x29, 0x01, 0x00, 0x00,
 }

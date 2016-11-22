@@ -14,10 +14,12 @@ option (gogoproto.goproto_getters_all) = false;
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 import "github.com/jhaynie/go-github-protobuf/github/comment.proto";
 import "github.com/jhaynie/go-github-protobuf/github/repository.proto";
+import "github.com/jhaynie/go-github-protobuf/github/installation.proto";
 
 message CommitCommentEvent {
 	string action = 1;
 	Comment comment = 2;
 	Repository repository = 3;
 	User sender = 4;
+	Installation installation = 5;
 }
