@@ -235,8 +235,16 @@ func applyPushEventHack(buf []byte) []byte {
 	r := p["repository"].(map[string]interface{})
 	r["pushed_at"] = toTimestamp(r["pushed_at"])
 	r["created_at"] = toTimestamp(r["created_at"])
-	if r["sha"] == nil {
-		r["sha"] = r["id"]
+	commits := p["commits"].([]interface{})
+	for _, c := range commits {
+		commit := c.(map[string]interface{})
+		if commit["sha"] == nil {
+			if commit["id"] == nil {
+				commit["sha"] = p["after"]
+			} else {
+				commit["sha"] = commit["id"]
+			}
+		}
 	}
 	result, err := json.Marshal(p)
 	if err != nil {
