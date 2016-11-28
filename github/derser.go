@@ -235,6 +235,9 @@ func applyPushEventHack(buf []byte) []byte {
 	r := p["repository"].(map[string]interface{})
 	r["pushed_at"] = toTimestamp(r["pushed_at"])
 	r["created_at"] = toTimestamp(r["created_at"])
+	if r["sha"] == nil {
+		r["sha"] = r["id"]
+	}
 	result, err := json.Marshal(p)
 	if err != nil {
 		panic(err.Error())
