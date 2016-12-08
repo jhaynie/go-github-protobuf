@@ -84,6 +84,7 @@
 		InstallationRepo
 		IntegrationInstallationRepositories
 		Label
+		PullRequestRef
 		Issue
 		IssueCommentEvent
 		IssuesEvent
