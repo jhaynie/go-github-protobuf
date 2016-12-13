@@ -235,6 +235,21 @@ func applyPushEventHack(buf []byte) []byte {
 	r := p["repository"].(map[string]interface{})
 	r["pushed_at"] = toTimestamp(r["pushed_at"])
 	r["created_at"] = toTimestamp(r["created_at"])
+	if r["organization"] != nil {
+		switch v := r["organization"].(type) {
+			case string: {
+				// for a webhook, organization can be a string value
+				// which points to the organization login instead of the
+				// User object. we need to patch that
+				if p["organization"] != nil {
+					org := p["organization"].(map[string]interface{})
+					if v == org["login"] {
+						r["organization"] = org
+					}
+				}
+			}
+		}
+	}
 	commits := p["commits"].([]interface{})
 	for _, c := range commits {
 		commit := c.(map[string]interface{})
@@ -243,6 +258,19 @@ func applyPushEventHack(buf []byte) []byte {
 				commit["sha"] = p["after"]
 			} else {
 				commit["sha"] = commit["id"]
+			}
+		}
+	}
+	// head_commit can have wrong id
+	if p["head_commit"] != nil {
+		head_commit := p["head_commit"].(map[string]interface{})
+		idval := head_commit["id"]
+		if  idval != nil {
+			switch v := idval.(type) {
+				case string: {
+					head_commit["sha"] = v
+					head_commit["id"] = nil
+				}
 			}
 		}
 	}
