@@ -103,54 +103,54 @@ func init() {
 	proto.RegisterType((*Links)(nil), "github.Links")
 	proto.RegisterType((*PullRequest)(nil), "github.PullRequest")
 }
-func (m *RepositoryRef) Marshal() (data []byte, err error) {
+func (m *RepositoryRef) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *RepositoryRef) MarshalTo(data []byte) (int, error) {
+func (m *RepositoryRef) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Label) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Label)))
-		i += copy(data[i:], m.Label)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Label)))
+		i += copy(dAtA[i:], m.Label)
 	}
 	if len(m.Ref) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Ref)))
-		i += copy(data[i:], m.Ref)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Ref)))
+		i += copy(dAtA[i:], m.Ref)
 	}
 	if len(m.Sha) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Sha)))
-		i += copy(data[i:], m.Sha)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Sha)))
+		i += copy(dAtA[i:], m.Sha)
 	}
 	if m.User != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.User.Size()))
-		n1, err := m.User.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.User.Size()))
+		n1, err := m.User.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if m.Repo != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Repo.Size()))
-		n2, err := m.Repo.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Repo.Size()))
+		n2, err := m.Repo.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -159,120 +159,120 @@ func (m *RepositoryRef) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func (m *LinkHref) Marshal() (data []byte, err error) {
+func (m *LinkHref) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *LinkHref) MarshalTo(data []byte) (int, error) {
+func (m *LinkHref) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Href) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Href)))
-		i += copy(data[i:], m.Href)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Href)))
+		i += copy(dAtA[i:], m.Href)
 	}
 	return i, nil
 }
 
-func (m *Links) Marshal() (data []byte, err error) {
+func (m *Links) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *Links) MarshalTo(data []byte) (int, error) {
+func (m *Links) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Self != nil {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Self.Size()))
-		n3, err := m.Self.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Self.Size()))
+		n3, err := m.Self.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Html != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Html.Size()))
-		n4, err := m.Html.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Html.Size()))
+		n4, err := m.Html.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.Issue != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Issue.Size()))
-		n5, err := m.Issue.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Issue.Size()))
+		n5, err := m.Issue.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
 	if m.Comments != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Comments.Size()))
-		n6, err := m.Comments.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Comments.Size()))
+		n6, err := m.Comments.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n6
 	}
 	if m.ReviewComments != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.ReviewComments.Size()))
-		n7, err := m.ReviewComments.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.ReviewComments.Size()))
+		n7, err := m.ReviewComments.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n7
 	}
 	if m.ReviewComment != nil {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.ReviewComment.Size()))
-		n8, err := m.ReviewComment.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.ReviewComment.Size()))
+		n8, err := m.ReviewComment.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n8
 	}
 	if m.Commits != nil {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Commits.Size()))
-		n9, err := m.Commits.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Commits.Size()))
+		n9, err := m.Commits.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n9
 	}
 	if m.Statuses != nil {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Statuses.Size()))
-		n10, err := m.Statuses.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Statuses.Size()))
+		n10, err := m.Statuses.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -281,332 +281,332 @@ func (m *Links) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func (m *PullRequest) Marshal() (data []byte, err error) {
+func (m *PullRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *PullRequest) MarshalTo(data []byte) (int, error) {
+func (m *PullRequest) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Id != 0 {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Id))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Id))
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.HtmlUrl) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.HtmlUrl)))
-		i += copy(data[i:], m.HtmlUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.HtmlUrl)))
+		i += copy(dAtA[i:], m.HtmlUrl)
 	}
 	if len(m.DiffUrl) > 0 {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.DiffUrl)))
-		i += copy(data[i:], m.DiffUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.DiffUrl)))
+		i += copy(dAtA[i:], m.DiffUrl)
 	}
 	if len(m.PatchUrl) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.PatchUrl)))
-		i += copy(data[i:], m.PatchUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.PatchUrl)))
+		i += copy(dAtA[i:], m.PatchUrl)
 	}
 	if len(m.IssueUrl) > 0 {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.IssueUrl)))
-		i += copy(data[i:], m.IssueUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.IssueUrl)))
+		i += copy(dAtA[i:], m.IssueUrl)
 	}
 	if len(m.CommitsUrl) > 0 {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.CommitsUrl)))
-		i += copy(data[i:], m.CommitsUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.CommitsUrl)))
+		i += copy(dAtA[i:], m.CommitsUrl)
 	}
 	if len(m.ReviewCommentsUrl) > 0 {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.ReviewCommentsUrl)))
-		i += copy(data[i:], m.ReviewCommentsUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.ReviewCommentsUrl)))
+		i += copy(dAtA[i:], m.ReviewCommentsUrl)
 	}
 	if len(m.ReviewCommentUrl) > 0 {
-		data[i] = 0x4a
+		dAtA[i] = 0x4a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.ReviewCommentUrl)))
-		i += copy(data[i:], m.ReviewCommentUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.ReviewCommentUrl)))
+		i += copy(dAtA[i:], m.ReviewCommentUrl)
 	}
 	if len(m.CommentsUrl) > 0 {
-		data[i] = 0x52
+		dAtA[i] = 0x52
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.CommentsUrl)))
-		i += copy(data[i:], m.CommentsUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.CommentsUrl)))
+		i += copy(dAtA[i:], m.CommentsUrl)
 	}
 	if len(m.StatusesUrl) > 0 {
-		data[i] = 0x5a
+		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.StatusesUrl)))
-		i += copy(data[i:], m.StatusesUrl)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.StatusesUrl)))
+		i += copy(dAtA[i:], m.StatusesUrl)
 	}
 	if m.Number != 0 {
-		data[i] = 0x60
+		dAtA[i] = 0x60
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Number))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Number))
 	}
 	if len(m.State) > 0 {
-		data[i] = 0x6a
+		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.State)))
-		i += copy(data[i:], m.State)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.State)))
+		i += copy(dAtA[i:], m.State)
 	}
 	if len(m.Title) > 0 {
-		data[i] = 0x72
+		dAtA[i] = 0x72
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Title)))
-		i += copy(data[i:], m.Title)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Title)))
+		i += copy(dAtA[i:], m.Title)
 	}
 	if len(m.Body) > 0 {
-		data[i] = 0x7a
+		dAtA[i] = 0x7a
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.Body)))
-		i += copy(data[i:], m.Body)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.Body)))
+		i += copy(dAtA[i:], m.Body)
 	}
 	if m.Assignee != nil {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Assignee.Size()))
-		n11, err := m.Assignee.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Assignee.Size()))
+		n11, err := m.Assignee.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n11
 	}
 	if m.Milestone != nil {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Milestone.Size()))
-		n12, err := m.Milestone.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Milestone.Size()))
+		n12, err := m.Milestone.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n12
 	}
 	if m.Locked {
-		data[i] = 0x90
+		dAtA[i] = 0x90
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
 		if m.Locked {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x9a
+		dAtA[i] = 0x9a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0xa2
+		dAtA[i] = 0xa2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	if len(m.ClosedAt) > 0 {
-		data[i] = 0xaa
+		dAtA[i] = 0xaa
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.ClosedAt)))
-		i += copy(data[i:], m.ClosedAt)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.ClosedAt)))
+		i += copy(dAtA[i:], m.ClosedAt)
 	}
 	if len(m.MergedAt) > 0 {
-		data[i] = 0xb2
+		dAtA[i] = 0xb2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.MergedAt)))
-		i += copy(data[i:], m.MergedAt)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.MergedAt)))
+		i += copy(dAtA[i:], m.MergedAt)
 	}
 	if m.Head != nil {
-		data[i] = 0xba
+		dAtA[i] = 0xba
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Head.Size()))
-		n13, err := m.Head.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Head.Size()))
+		n13, err := m.Head.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n13
 	}
 	if m.Base != nil {
-		data[i] = 0xc2
+		dAtA[i] = 0xc2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Base.Size()))
-		n14, err := m.Base.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Base.Size()))
+		n14, err := m.Base.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n14
 	}
 	if m.User != nil {
-		data[i] = 0xca
+		dAtA[i] = 0xca
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.User.Size()))
-		n15, err := m.User.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.User.Size()))
+		n15, err := m.User.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n15
 	}
 	if len(m.MergeCommitSha) > 0 {
-		data[i] = 0xd2
+		dAtA[i] = 0xd2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(len(m.MergeCommitSha)))
-		i += copy(data[i:], m.MergeCommitSha)
+		i = encodeVarintPullRequest(dAtA, i, uint64(len(m.MergeCommitSha)))
+		i += copy(dAtA[i:], m.MergeCommitSha)
 	}
 	if m.Merged {
-		data[i] = 0xd8
+		dAtA[i] = 0xd8
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
 		if m.Merged {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Mergeable {
-		data[i] = 0xe0
+		dAtA[i] = 0xe0
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
 		if m.Mergeable {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.XLinks != nil {
-		data[i] = 0xea
+		dAtA[i] = 0xea
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.XLinks.Size()))
-		n16, err := m.XLinks.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.XLinks.Size()))
+		n16, err := m.XLinks.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n16
 	}
 	if m.MergedBy != nil {
-		data[i] = 0xf2
+		dAtA[i] = 0xf2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.MergedBy.Size()))
-		n17, err := m.MergedBy.MarshalTo(data[i:])
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.MergedBy.Size()))
+		n17, err := m.MergedBy.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n17
 	}
 	if m.Comments != 0 {
-		data[i] = 0xf8
+		dAtA[i] = 0xf8
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Comments))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Comments))
 	}
 	if m.Commits != 0 {
-		data[i] = 0x80
+		dAtA[i] = 0x80
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Commits))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Commits))
 	}
 	if m.Additions != 0 {
-		data[i] = 0x88
+		dAtA[i] = 0x88
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Additions))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Additions))
 	}
 	if m.Deletions != 0 {
-		data[i] = 0x90
+		dAtA[i] = 0x90
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.Deletions))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.Deletions))
 	}
 	if m.ChangedFiles != 0 {
-		data[i] = 0x98
+		dAtA[i] = 0x98
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintPullRequest(data, i, uint64(m.ChangedFiles))
+		i = encodeVarintPullRequest(dAtA, i, uint64(m.ChangedFiles))
 	}
 	return i, nil
 }
 
-func encodeFixed64PullRequest(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64PullRequest(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32PullRequest(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32PullRequest(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintPullRequest(data []byte, offset int, v uint64) int {
+func encodeVarintPullRequest(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *RepositoryRef) Size() (n int) {
@@ -832,8 +832,8 @@ func sovPullRequest(x uint64) (n int) {
 func sozPullRequest(x uint64) (n int) {
 	return sovPullRequest(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *RepositoryRef) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *RepositoryRef) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -845,7 +845,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -873,7 +873,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -888,7 +888,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Label = string(data[iNdEx:postIndex])
+			m.Label = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -902,7 +902,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -917,7 +917,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Ref = string(data[iNdEx:postIndex])
+			m.Ref = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -931,7 +931,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -946,7 +946,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Sha = string(data[iNdEx:postIndex])
+			m.Sha = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -960,7 +960,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -977,7 +977,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if m.User == nil {
 				m.User = &User{}
 			}
-			if err := m.User.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.User.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -993,7 +993,7 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1010,13 +1010,13 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 			if m.Repo == nil {
 				m.Repo = &Repository{}
 			}
-			if err := m.Repo.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Repo.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPullRequest(data[iNdEx:])
+			skippy, err := skipPullRequest(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1035,8 +1035,8 @@ func (m *RepositoryRef) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *LinkHref) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *LinkHref) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1048,7 +1048,7 @@ func (m *LinkHref) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1076,7 +1076,7 @@ func (m *LinkHref) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1091,11 +1091,11 @@ func (m *LinkHref) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Href = string(data[iNdEx:postIndex])
+			m.Href = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPullRequest(data[iNdEx:])
+			skippy, err := skipPullRequest(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1114,8 +1114,8 @@ func (m *LinkHref) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *Links) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *Links) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1127,7 +1127,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1155,7 +1155,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1172,7 +1172,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Self == nil {
 				m.Self = &LinkHref{}
 			}
-			if err := m.Self.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Self.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1188,7 +1188,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1205,7 +1205,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Html == nil {
 				m.Html = &LinkHref{}
 			}
-			if err := m.Html.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Html.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1221,7 +1221,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1238,7 +1238,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Issue == nil {
 				m.Issue = &LinkHref{}
 			}
-			if err := m.Issue.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Issue.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1254,7 +1254,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1271,7 +1271,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Comments == nil {
 				m.Comments = &LinkHref{}
 			}
-			if err := m.Comments.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Comments.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1287,7 +1287,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1304,7 +1304,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.ReviewComments == nil {
 				m.ReviewComments = &LinkHref{}
 			}
-			if err := m.ReviewComments.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.ReviewComments.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1320,7 +1320,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1337,7 +1337,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.ReviewComment == nil {
 				m.ReviewComment = &LinkHref{}
 			}
-			if err := m.ReviewComment.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.ReviewComment.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1353,7 +1353,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1370,7 +1370,7 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Commits == nil {
 				m.Commits = &LinkHref{}
 			}
-			if err := m.Commits.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Commits.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1386,7 +1386,7 @@ func (m *Links) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1403,13 +1403,13 @@ func (m *Links) Unmarshal(data []byte) error {
 			if m.Statuses == nil {
 				m.Statuses = &LinkHref{}
 			}
-			if err := m.Statuses.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Statuses.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPullRequest(data[iNdEx:])
+			skippy, err := skipPullRequest(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1428,8 +1428,8 @@ func (m *Links) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *PullRequest) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *PullRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1441,7 +1441,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1469,7 +1469,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Id |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1488,7 +1488,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1503,7 +1503,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1517,7 +1517,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1532,7 +1532,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.HtmlUrl = string(data[iNdEx:postIndex])
+			m.HtmlUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -1546,7 +1546,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1561,7 +1561,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DiffUrl = string(data[iNdEx:postIndex])
+			m.DiffUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -1575,7 +1575,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1590,7 +1590,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.PatchUrl = string(data[iNdEx:postIndex])
+			m.PatchUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
@@ -1604,7 +1604,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1619,7 +1619,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.IssueUrl = string(data[iNdEx:postIndex])
+			m.IssueUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
@@ -1633,7 +1633,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1648,7 +1648,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommitsUrl = string(data[iNdEx:postIndex])
+			m.CommitsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
@@ -1662,7 +1662,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1677,7 +1677,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ReviewCommentsUrl = string(data[iNdEx:postIndex])
+			m.ReviewCommentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
@@ -1691,7 +1691,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1706,7 +1706,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ReviewCommentUrl = string(data[iNdEx:postIndex])
+			m.ReviewCommentUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
@@ -1720,7 +1720,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1735,7 +1735,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommentsUrl = string(data[iNdEx:postIndex])
+			m.CommentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
@@ -1749,7 +1749,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1764,7 +1764,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.StatusesUrl = string(data[iNdEx:postIndex])
+			m.StatusesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 12:
 			if wireType != 0 {
@@ -1778,7 +1778,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Number |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1797,7 +1797,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1812,7 +1812,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.State = string(data[iNdEx:postIndex])
+			m.State = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
@@ -1826,7 +1826,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1841,7 +1841,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Title = string(data[iNdEx:postIndex])
+			m.Title = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 15:
 			if wireType != 2 {
@@ -1855,7 +1855,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1870,7 +1870,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Body = string(data[iNdEx:postIndex])
+			m.Body = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 16:
 			if wireType != 2 {
@@ -1884,7 +1884,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1901,7 +1901,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.Assignee == nil {
 				m.Assignee = &User{}
 			}
-			if err := m.Assignee.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Assignee.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1917,7 +1917,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1934,7 +1934,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.Milestone == nil {
 				m.Milestone = &Milestone{}
 			}
-			if err := m.Milestone.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Milestone.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1950,7 +1950,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1970,7 +1970,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1985,7 +1985,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 20:
 			if wireType != 2 {
@@ -1999,7 +1999,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2014,7 +2014,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -2028,7 +2028,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2043,7 +2043,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ClosedAt = string(data[iNdEx:postIndex])
+			m.ClosedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 22:
 			if wireType != 2 {
@@ -2057,7 +2057,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2072,7 +2072,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MergedAt = string(data[iNdEx:postIndex])
+			m.MergedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 23:
 			if wireType != 2 {
@@ -2086,7 +2086,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2103,7 +2103,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.Head == nil {
 				m.Head = &RepositoryRef{}
 			}
-			if err := m.Head.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Head.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2119,7 +2119,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2136,7 +2136,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.Base == nil {
 				m.Base = &RepositoryRef{}
 			}
-			if err := m.Base.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Base.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2152,7 +2152,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2169,7 +2169,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.User == nil {
 				m.User = &User{}
 			}
-			if err := m.User.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.User.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2185,7 +2185,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2200,7 +2200,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MergeCommitSha = string(data[iNdEx:postIndex])
+			m.MergeCommitSha = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 27:
 			if wireType != 0 {
@@ -2214,7 +2214,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2234,7 +2234,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2254,7 +2254,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2271,7 +2271,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.XLinks == nil {
 				m.XLinks = &Links{}
 			}
-			if err := m.XLinks.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.XLinks.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2287,7 +2287,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2304,7 +2304,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			if m.MergedBy == nil {
 				m.MergedBy = &User{}
 			}
-			if err := m.MergedBy.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.MergedBy.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2320,7 +2320,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Comments |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2339,7 +2339,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Commits |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2358,7 +2358,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Additions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2377,7 +2377,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Deletions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2396,7 +2396,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.ChangedFiles |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2405,7 +2405,7 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 			}
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPullRequest(data[iNdEx:])
+			skippy, err := skipPullRequest(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2424,8 +2424,8 @@ func (m *PullRequest) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipPullRequest(data []byte) (n int, err error) {
-	l := len(data)
+func skipPullRequest(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -2436,7 +2436,7 @@ func skipPullRequest(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -2454,7 +2454,7 @@ func skipPullRequest(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -2471,7 +2471,7 @@ func skipPullRequest(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2494,7 +2494,7 @@ func skipPullRequest(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -2505,7 +2505,7 @@ func skipPullRequest(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipPullRequest(data[start:])
+				next, err := skipPullRequest(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

@@ -138,391 +138,391 @@ func init() {
 	proto.RegisterType((*CommitDetail)(nil), "github.CommitDetail")
 	proto.RegisterType((*Commit)(nil), "github.Commit")
 }
-func (m *CommitDetailTree) Marshal() (data []byte, err error) {
+func (m *CommitDetailTree) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitDetailTree) MarshalTo(data []byte) (int, error) {
+func (m *CommitDetailTree) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Sha) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Sha)))
-		i += copy(data[i:], m.Sha)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Sha)))
+		i += copy(dAtA[i:], m.Sha)
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	return i, nil
 }
 
-func (m *CommitLinguist) Marshal() (data []byte, err error) {
+func (m *CommitLinguist) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitLinguist) MarshalTo(data []byte) (int, error) {
+func (m *CommitLinguist) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.ContentType) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.ContentType)))
-		i += copy(data[i:], m.ContentType)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.ContentType)))
+		i += copy(dAtA[i:], m.ContentType)
 	}
 	if len(m.Disposition) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Disposition)))
-		i += copy(data[i:], m.Disposition)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Disposition)))
+		i += copy(dAtA[i:], m.Disposition)
 	}
 	if len(m.Extname) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Extname)))
-		i += copy(data[i:], m.Extname)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Extname)))
+		i += copy(dAtA[i:], m.Extname)
 	}
 	if m.IsBinary {
-		data[i] = 0x20
+		dAtA[i] = 0x20
 		i++
 		if m.IsBinary {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsDocumentation {
-		data[i] = 0x28
+		dAtA[i] = 0x28
 		i++
 		if m.IsDocumentation {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsGenerated {
-		data[i] = 0x30
+		dAtA[i] = 0x30
 		i++
 		if m.IsGenerated {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsHighRatioOfLongLines {
-		data[i] = 0x38
+		dAtA[i] = 0x38
 		i++
 		if m.IsHighRatioOfLongLines {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsImage {
-		data[i] = 0x40
+		dAtA[i] = 0x40
 		i++
 		if m.IsImage {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsLarge {
-		data[i] = 0x48
+		dAtA[i] = 0x48
 		i++
 		if m.IsLarge {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsSafeToColorize {
-		data[i] = 0x50
+		dAtA[i] = 0x50
 		i++
 		if m.IsSafeToColorize {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsText {
-		data[i] = 0x58
+		dAtA[i] = 0x58
 		i++
 		if m.IsText {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsVendored {
-		data[i] = 0x60
+		dAtA[i] = 0x60
 		i++
 		if m.IsVendored {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.IsViewable {
-		data[i] = 0x68
+		dAtA[i] = 0x68
 		i++
 		if m.IsViewable {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Loc != 0 {
-		data[i] = 0x70
+		dAtA[i] = 0x70
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Loc))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Loc))
 	}
 	if m.Sloc != 0 {
-		data[i] = 0x78
+		dAtA[i] = 0x78
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Sloc))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Sloc))
 	}
 	if m.Comments != 0 {
-		data[i] = 0x80
+		dAtA[i] = 0x80
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Comments))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Comments))
 	}
 	if m.Blanks != 0 {
-		data[i] = 0x88
+		dAtA[i] = 0x88
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Blanks))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Blanks))
 	}
 	if len(m.Type) > 0 {
-		data[i] = 0x92
+		dAtA[i] = 0x92
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Type)))
-		i += copy(data[i:], m.Type)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Type)))
+		i += copy(dAtA[i:], m.Type)
 	}
 	return i, nil
 }
 
-func (m *CommitFramework) Marshal() (data []byte, err error) {
+func (m *CommitFramework) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitFramework) MarshalTo(data []byte) (int, error) {
+func (m *CommitFramework) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Name) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Name)))
-		i += copy(data[i:], m.Name)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Name)))
+		i += copy(dAtA[i:], m.Name)
 	}
 	return i, nil
 }
 
-func (m *CommitLicense) Marshal() (data []byte, err error) {
+func (m *CommitLicense) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitLicense) MarshalTo(data []byte) (int, error) {
+func (m *CommitLicense) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Id)))
-		i += copy(data[i:], m.Id)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Id)))
+		i += copy(dAtA[i:], m.Id)
 	}
 	if len(m.Name) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Name)))
-		i += copy(data[i:], m.Name)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Name)))
+		i += copy(dAtA[i:], m.Name)
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if m.OsiApproved {
-		data[i] = 0x20
+		dAtA[i] = 0x20
 		i++
 		if m.OsiApproved {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.License) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.License)))
-		i += copy(data[i:], m.License)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.License)))
+		i += copy(dAtA[i:], m.License)
 	}
 	return i, nil
 }
 
-func (m *CommitFileDetail) Marshal() (data []byte, err error) {
+func (m *CommitFileDetail) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitFileDetail) MarshalTo(data []byte) (int, error) {
+func (m *CommitFileDetail) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Id)))
-		i += copy(data[i:], m.Id)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Id)))
+		i += copy(dAtA[i:], m.Id)
 	}
 	if len(m.Commit) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Commit)))
-		i += copy(data[i:], m.Commit)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Commit)))
+		i += copy(dAtA[i:], m.Commit)
 	}
 	if m.Author != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Author.Size()))
-		n1, err := m.Author.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Author.Size()))
+		n1, err := m.Author.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if m.Committer != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Committer.Size()))
-		n2, err := m.Committer.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Committer.Size()))
+		n2, err := m.Committer.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.Binary {
-		data[i] = 0x28
+		dAtA[i] = 0x28
 		i++
 		if m.Binary {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.Body) > 0 {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Body)))
-		i += copy(data[i:], m.Body)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Body)))
+		i += copy(dAtA[i:], m.Body)
 	}
 	if len(m.Patch) > 0 {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Patch)))
-		i += copy(data[i:], m.Patch)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Patch)))
+		i += copy(dAtA[i:], m.Patch)
 	}
 	if len(m.Filename) > 0 {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Filename)))
-		i += copy(data[i:], m.Filename)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Filename)))
+		i += copy(dAtA[i:], m.Filename)
 	}
 	if len(m.Language) > 0 {
-		data[i] = 0x4a
+		dAtA[i] = 0x4a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Language)))
-		i += copy(data[i:], m.Language)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Language)))
+		i += copy(dAtA[i:], m.Language)
 	}
 	if len(m.Mimetype) > 0 {
-		data[i] = 0x52
+		dAtA[i] = 0x52
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Mimetype)))
-		i += copy(data[i:], m.Mimetype)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Mimetype)))
+		i += copy(dAtA[i:], m.Mimetype)
 	}
 	if len(m.Status) > 0 {
-		data[i] = 0x5a
+		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Status)))
-		i += copy(data[i:], m.Status)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Status)))
+		i += copy(dAtA[i:], m.Status)
 	}
 	if m.FileSize != 0 {
-		data[i] = 0x60
+		dAtA[i] = 0x60
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.FileSize))
+		i = encodeVarintCommit(dAtA, i, uint64(m.FileSize))
 	}
 	if m.Additions != 0 {
-		data[i] = 0x68
+		dAtA[i] = 0x68
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Additions))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Additions))
 	}
 	if m.Deletions != 0 {
-		data[i] = 0x70
+		dAtA[i] = 0x70
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Deletions))
+		i = encodeVarintCommit(dAtA, i, uint64(m.Deletions))
 	}
 	if len(m.Licenses) > 0 {
 		for k, _ := range m.Licenses {
-			data[i] = 0x7a
+			dAtA[i] = 0x7a
 			i++
 			v := m.Licenses[k]
 			msgSize := 0
@@ -531,16 +531,16 @@ func (m *CommitFileDetail) MarshalTo(data []byte) (int, error) {
 				msgSize += 1 + sovCommit(uint64(msgSize))
 			}
 			mapSize := 1 + len(k) + sovCommit(uint64(len(k))) + msgSize
-			i = encodeVarintCommit(data, i, uint64(mapSize))
-			data[i] = 0xa
+			i = encodeVarintCommit(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
 			i++
-			i = encodeVarintCommit(data, i, uint64(len(k)))
-			i += copy(data[i:], k)
+			i = encodeVarintCommit(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
 			if v != nil {
-				data[i] = 0x12
+				dAtA[i] = 0x12
 				i++
-				i = encodeVarintCommit(data, i, uint64(v.Size()))
-				n3, err := v.MarshalTo(data[i:])
+				i = encodeVarintCommit(dAtA, i, uint64(v.Size()))
+				n3, err := v.MarshalTo(dAtA[i:])
 				if err != nil {
 					return 0, err
 				}
@@ -550,12 +550,12 @@ func (m *CommitFileDetail) MarshalTo(data []byte) (int, error) {
 	}
 	if len(m.Frameworks) > 0 {
 		for _, msg := range m.Frameworks {
-			data[i] = 0x82
+			dAtA[i] = 0x82
 			i++
-			data[i] = 0x1
+			dAtA[i] = 0x1
 			i++
-			i = encodeVarintCommit(data, i, uint64(msg.Size()))
-			n, err := msg.MarshalTo(data[i:])
+			i = encodeVarintCommit(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
@@ -563,12 +563,12 @@ func (m *CommitFileDetail) MarshalTo(data []byte) (int, error) {
 		}
 	}
 	if m.Linguist != nil {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Linguist.Size()))
-		n4, err := m.Linguist.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Linguist.Size()))
+		n4, err := m.Linguist.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -577,123 +577,123 @@ func (m *CommitFileDetail) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func (m *CommitDetail) Marshal() (data []byte, err error) {
+func (m *CommitDetail) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *CommitDetail) MarshalTo(data []byte) (int, error) {
+func (m *CommitDetail) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Author != nil {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Author.Size()))
-		n5, err := m.Author.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Author.Size()))
+		n5, err := m.Author.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
 	if m.Committer != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Committer.Size()))
-		n6, err := m.Committer.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Committer.Size()))
+		n6, err := m.Committer.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n6
 	}
 	if m.CommentCount != 0 {
-		data[i] = 0x18
+		dAtA[i] = 0x18
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.CommentCount))
+		i = encodeVarintCommit(dAtA, i, uint64(m.CommentCount))
 	}
 	if len(m.Message) > 0 {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Message)))
-		i += copy(data[i:], m.Message)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Message)))
+		i += copy(dAtA[i:], m.Message)
 	}
 	if m.Tree != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Tree.Size()))
-		n7, err := m.Tree.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Tree.Size()))
+		n7, err := m.Tree.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n7
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	return i, nil
 }
 
-func (m *Commit) Marshal() (data []byte, err error) {
+func (m *Commit) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *Commit) MarshalTo(data []byte) (int, error) {
+func (m *Commit) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Id) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Id)))
-		i += copy(data[i:], m.Id)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Id)))
+		i += copy(dAtA[i:], m.Id)
 	}
 	if len(m.Sha) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintCommit(data, i, uint64(len(m.Sha)))
-		i += copy(data[i:], m.Sha)
+		i = encodeVarintCommit(dAtA, i, uint64(len(m.Sha)))
+		i += copy(dAtA[i:], m.Sha)
 	}
 	if m.Author != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Author.Size()))
-		n8, err := m.Author.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Author.Size()))
+		n8, err := m.Author.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n8
 	}
 	if m.Committer != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Committer.Size()))
-		n9, err := m.Committer.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Committer.Size()))
+		n9, err := m.Committer.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n9
 	}
 	if m.Commit != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Commit.Size()))
-		n10, err := m.Commit.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Commit.Size()))
+		n10, err := m.Commit.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -701,10 +701,10 @@ func (m *Commit) MarshalTo(data []byte) (int, error) {
 	}
 	if len(m.Files) > 0 {
 		for _, msg := range m.Files {
-			data[i] = 0x32
+			dAtA[i] = 0x32
 			i++
-			i = encodeVarintCommit(data, i, uint64(msg.Size()))
-			n, err := msg.MarshalTo(data[i:])
+			i = encodeVarintCommit(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
@@ -713,10 +713,10 @@ func (m *Commit) MarshalTo(data []byte) (int, error) {
 	}
 	if len(m.Parents) > 0 {
 		for _, msg := range m.Parents {
-			data[i] = 0x3a
+			dAtA[i] = 0x3a
 			i++
-			i = encodeVarintCommit(data, i, uint64(msg.Size()))
-			n, err := msg.MarshalTo(data[i:])
+			i = encodeVarintCommit(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
@@ -724,10 +724,10 @@ func (m *Commit) MarshalTo(data []byte) (int, error) {
 		}
 	}
 	if m.Repo != nil {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintCommit(data, i, uint64(m.Repo.Size()))
-		n11, err := m.Repo.MarshalTo(data[i:])
+		i = encodeVarintCommit(dAtA, i, uint64(m.Repo.Size()))
+		n11, err := m.Repo.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -736,31 +736,31 @@ func (m *Commit) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64Commit(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64Commit(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32Commit(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32Commit(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintCommit(data []byte, offset int, v uint64) int {
+func encodeVarintCommit(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *CommitDetailTree) Size() (n int) {
@@ -1041,8 +1041,8 @@ func sovCommit(x uint64) (n int) {
 func sozCommit(x uint64) (n int) {
 	return sovCommit(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *CommitDetailTree) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitDetailTree) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1054,7 +1054,7 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1082,7 +1082,7 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1097,7 +1097,7 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Sha = string(data[iNdEx:postIndex])
+			m.Sha = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1111,7 +1111,7 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1126,11 +1126,11 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1149,8 +1149,8 @@ func (m *CommitDetailTree) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *CommitLinguist) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitLinguist) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1162,7 +1162,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1190,7 +1190,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1205,7 +1205,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ContentType = string(data[iNdEx:postIndex])
+			m.ContentType = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1219,7 +1219,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1234,7 +1234,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Disposition = string(data[iNdEx:postIndex])
+			m.Disposition = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1248,7 +1248,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1263,7 +1263,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Extname = string(data[iNdEx:postIndex])
+			m.Extname = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 0 {
@@ -1277,7 +1277,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1297,7 +1297,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1317,7 +1317,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1337,7 +1337,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1357,7 +1357,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1377,7 +1377,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1397,7 +1397,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1417,7 +1417,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1437,7 +1437,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1457,7 +1457,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1477,7 +1477,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Loc |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1496,7 +1496,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Sloc |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1515,7 +1515,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Comments |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1534,7 +1534,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Blanks |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1553,7 +1553,7 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1568,11 +1568,11 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = string(data[iNdEx:postIndex])
+			m.Type = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1591,8 +1591,8 @@ func (m *CommitLinguist) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *CommitFramework) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitFramework) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1604,7 +1604,7 @@ func (m *CommitFramework) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1632,7 +1632,7 @@ func (m *CommitFramework) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1647,11 +1647,11 @@ func (m *CommitFramework) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Name = string(data[iNdEx:postIndex])
+			m.Name = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1670,8 +1670,8 @@ func (m *CommitFramework) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *CommitLicense) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitLicense) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1683,7 +1683,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1711,7 +1711,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1726,7 +1726,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(data[iNdEx:postIndex])
+			m.Id = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1740,7 +1740,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1755,7 +1755,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Name = string(data[iNdEx:postIndex])
+			m.Name = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1769,7 +1769,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1784,7 +1784,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 0 {
@@ -1798,7 +1798,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1818,7 +1818,7 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1833,11 +1833,11 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.License = string(data[iNdEx:postIndex])
+			m.License = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1856,8 +1856,8 @@ func (m *CommitLicense) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *CommitFileDetail) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitFileDetail) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1869,7 +1869,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1897,7 +1897,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1912,7 +1912,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(data[iNdEx:postIndex])
+			m.Id = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1926,7 +1926,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1941,7 +1941,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Commit = string(data[iNdEx:postIndex])
+			m.Commit = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1955,7 +1955,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1972,7 +1972,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if m.Author == nil {
 				m.Author = &User{}
 			}
-			if err := m.Author.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Author.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1988,7 +1988,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2005,7 +2005,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if m.Committer == nil {
 				m.Committer = &User{}
 			}
-			if err := m.Committer.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Committer.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2021,7 +2021,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2041,7 +2041,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2056,7 +2056,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Body = string(data[iNdEx:postIndex])
+			m.Body = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
@@ -2070,7 +2070,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2085,7 +2085,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Patch = string(data[iNdEx:postIndex])
+			m.Patch = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
@@ -2099,7 +2099,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2114,7 +2114,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Filename = string(data[iNdEx:postIndex])
+			m.Filename = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
@@ -2128,7 +2128,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2143,7 +2143,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Language = string(data[iNdEx:postIndex])
+			m.Language = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
@@ -2157,7 +2157,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2172,7 +2172,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Mimetype = string(data[iNdEx:postIndex])
+			m.Mimetype = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
@@ -2186,7 +2186,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2201,7 +2201,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Status = string(data[iNdEx:postIndex])
+			m.Status = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 12:
 			if wireType != 0 {
@@ -2215,7 +2215,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.FileSize |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2234,7 +2234,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Additions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2253,7 +2253,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Deletions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2272,7 +2272,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2294,7 +2294,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				keykey |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2309,7 +2309,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLenmapkey |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2324,7 +2324,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if postStringIndexmapkey > l {
 				return io.ErrUnexpectedEOF
 			}
-			mapkey := string(data[iNdEx:postStringIndexmapkey])
+			mapkey := string(dAtA[iNdEx:postStringIndexmapkey])
 			iNdEx = postStringIndexmapkey
 			if m.Licenses == nil {
 				m.Licenses = make(map[string]*CommitLicense)
@@ -2338,7 +2338,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 					if iNdEx >= l {
 						return io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					valuekey |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -2353,7 +2353,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 					if iNdEx >= l {
 						return io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					mapmsglen |= (int(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -2371,7 +2371,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 					return io.ErrUnexpectedEOF
 				}
 				mapvalue := &CommitLicense{}
-				if err := mapvalue.Unmarshal(data[iNdEx:postmsgIndex]); err != nil {
+				if err := mapvalue.Unmarshal(dAtA[iNdEx:postmsgIndex]); err != nil {
 					return err
 				}
 				iNdEx = postmsgIndex
@@ -2393,7 +2393,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2408,7 +2408,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Frameworks = append(m.Frameworks, &CommitFramework{})
-			if err := m.Frameworks[len(m.Frameworks)-1].Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Frameworks[len(m.Frameworks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2424,7 +2424,7 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2441,13 +2441,13 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 			if m.Linguist == nil {
 				m.Linguist = &CommitLinguist{}
 			}
-			if err := m.Linguist.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Linguist.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2466,8 +2466,8 @@ func (m *CommitFileDetail) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *CommitDetail) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *CommitDetail) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -2479,7 +2479,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -2507,7 +2507,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2524,7 +2524,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if m.Author == nil {
 				m.Author = &CommitUser{}
 			}
-			if err := m.Author.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Author.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2540,7 +2540,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2557,7 +2557,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if m.Committer == nil {
 				m.Committer = &CommitUser{}
 			}
-			if err := m.Committer.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Committer.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2573,7 +2573,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.CommentCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2592,7 +2592,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2607,7 +2607,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Message = string(data[iNdEx:postIndex])
+			m.Message = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -2621,7 +2621,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2638,7 +2638,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if m.Tree == nil {
 				m.Tree = &CommitDetailTree{}
 			}
-			if err := m.Tree.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Tree.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2654,7 +2654,7 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2669,11 +2669,11 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2692,8 +2692,8 @@ func (m *CommitDetail) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *Commit) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *Commit) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -2705,7 +2705,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -2733,7 +2733,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2748,7 +2748,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(data[iNdEx:postIndex])
+			m.Id = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -2762,7 +2762,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2777,7 +2777,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Sha = string(data[iNdEx:postIndex])
+			m.Sha = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -2791,7 +2791,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2808,7 +2808,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if m.Author == nil {
 				m.Author = &User{}
 			}
-			if err := m.Author.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Author.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2824,7 +2824,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2841,7 +2841,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if m.Committer == nil {
 				m.Committer = &User{}
 			}
-			if err := m.Committer.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Committer.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2857,7 +2857,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2874,7 +2874,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if m.Commit == nil {
 				m.Commit = &CommitDetail{}
 			}
-			if err := m.Commit.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Commit.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2890,7 +2890,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2905,7 +2905,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Files = append(m.Files, &CommitFileDetail{})
-			if err := m.Files[len(m.Files)-1].Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Files[len(m.Files)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2921,7 +2921,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2936,7 +2936,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Parents = append(m.Parents, &CommitDetailTree{})
-			if err := m.Parents[len(m.Parents)-1].Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Parents[len(m.Parents)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2952,7 +2952,7 @@ func (m *Commit) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2969,13 +2969,13 @@ func (m *Commit) Unmarshal(data []byte) error {
 			if m.Repo == nil {
 				m.Repo = &Repository{}
 			}
-			if err := m.Repo.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Repo.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipCommit(data[iNdEx:])
+			skippy, err := skipCommit(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2994,8 +2994,8 @@ func (m *Commit) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipCommit(data []byte) (n int, err error) {
-	l := len(data)
+func skipCommit(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -3006,7 +3006,7 @@ func skipCommit(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -3024,7 +3024,7 @@ func skipCommit(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -3041,7 +3041,7 @@ func skipCommit(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3064,7 +3064,7 @@ func skipCommit(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -3075,7 +3075,7 @@ func skipCommit(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipCommit(data[start:])
+				next, err := skipCommit(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

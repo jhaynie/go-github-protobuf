@@ -31,56 +31,56 @@ func (*PublicEvent) Descriptor() ([]byte, []int) { return fileDescriptorPublicEv
 func init() {
 	proto.RegisterType((*PublicEvent)(nil), "github.PublicEvent")
 }
-func (m *PublicEvent) Marshal() (data []byte, err error) {
+func (m *PublicEvent) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *PublicEvent) MarshalTo(data []byte) (int, error) {
+func (m *PublicEvent) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Repository != nil {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPublicEvent(data, i, uint64(m.Repository.Size()))
-		n1, err := m.Repository.MarshalTo(data[i:])
+		i = encodeVarintPublicEvent(dAtA, i, uint64(m.Repository.Size()))
+		n1, err := m.Repository.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if m.Sender != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPublicEvent(data, i, uint64(m.Sender.Size()))
-		n2, err := m.Sender.MarshalTo(data[i:])
+		i = encodeVarintPublicEvent(dAtA, i, uint64(m.Sender.Size()))
+		n2, err := m.Sender.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.Installation != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPublicEvent(data, i, uint64(m.Installation.Size()))
-		n3, err := m.Installation.MarshalTo(data[i:])
+		i = encodeVarintPublicEvent(dAtA, i, uint64(m.Installation.Size()))
+		n3, err := m.Installation.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Organization != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPublicEvent(data, i, uint64(m.Organization.Size()))
-		n4, err := m.Organization.MarshalTo(data[i:])
+		i = encodeVarintPublicEvent(dAtA, i, uint64(m.Organization.Size()))
+		n4, err := m.Organization.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -89,31 +89,31 @@ func (m *PublicEvent) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64PublicEvent(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64PublicEvent(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32PublicEvent(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32PublicEvent(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintPublicEvent(data []byte, offset int, v uint64) int {
+func encodeVarintPublicEvent(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *PublicEvent) Size() (n int) {
@@ -151,8 +151,8 @@ func sovPublicEvent(x uint64) (n int) {
 func sozPublicEvent(x uint64) (n int) {
 	return sovPublicEvent(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *PublicEvent) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *PublicEvent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -164,7 +164,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -192,7 +192,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -209,7 +209,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 			if m.Repository == nil {
 				m.Repository = &Repository{}
 			}
-			if err := m.Repository.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Repository.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -225,7 +225,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -242,7 +242,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 			if m.Sender == nil {
 				m.Sender = &User{}
 			}
-			if err := m.Sender.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Sender.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -258,7 +258,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -275,7 +275,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 			if m.Installation == nil {
 				m.Installation = &Installation{}
 			}
-			if err := m.Installation.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Installation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -291,7 +291,7 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -308,13 +308,13 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 			if m.Organization == nil {
 				m.Organization = &User{}
 			}
-			if err := m.Organization.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Organization.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPublicEvent(data[iNdEx:])
+			skippy, err := skipPublicEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -333,8 +333,8 @@ func (m *PublicEvent) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipPublicEvent(data []byte) (n int, err error) {
-	l := len(data)
+func skipPublicEvent(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -345,7 +345,7 @@ func skipPublicEvent(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -363,7 +363,7 @@ func skipPublicEvent(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -380,7 +380,7 @@ func skipPublicEvent(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -403,7 +403,7 @@ func skipPublicEvent(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -414,7 +414,7 @@ func skipPublicEvent(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipPublicEvent(data[start:])
+				next, err := skipPublicEvent(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

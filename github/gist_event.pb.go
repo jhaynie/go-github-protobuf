@@ -112,273 +112,273 @@ func init() {
 	proto.RegisterType((*Gist)(nil), "github.Gist")
 	proto.RegisterType((*GistEvent)(nil), "github.GistEvent")
 }
-func (m *GistFile) Marshal() (data []byte, err error) {
+func (m *GistFile) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *GistFile) MarshalTo(data []byte) (int, error) {
+func (m *GistFile) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.FileSize != 0 {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.FileSize))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.FileSize))
 	}
 	if len(m.RawUrl) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.RawUrl)))
-		i += copy(data[i:], m.RawUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.RawUrl)))
+		i += copy(dAtA[i:], m.RawUrl)
 	}
 	if len(m.Type) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Type)))
-		i += copy(data[i:], m.Type)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Type)))
+		i += copy(dAtA[i:], m.Type)
 	}
 	if len(m.Language) > 0 {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Language)))
-		i += copy(data[i:], m.Language)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Language)))
+		i += copy(dAtA[i:], m.Language)
 	}
 	if m.Truncated {
-		data[i] = 0x28
+		dAtA[i] = 0x28
 		i++
 		if m.Truncated {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.Content) > 0 {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Content)))
-		i += copy(data[i:], m.Content)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Content)))
+		i += copy(dAtA[i:], m.Content)
 	}
 	return i, nil
 }
 
-func (m *GistFork) Marshal() (data []byte, err error) {
+func (m *GistFork) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *GistFork) MarshalTo(data []byte) (int, error) {
+func (m *GistFork) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.User != nil {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.User.Size()))
-		n1, err := m.User.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.User.Size()))
+		n1, err := m.User.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.Id) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Id)))
-		i += copy(data[i:], m.Id)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Id)))
+		i += copy(dAtA[i:], m.Id)
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	return i, nil
 }
 
-func (m *GistChangeStatus) Marshal() (data []byte, err error) {
+func (m *GistChangeStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *GistChangeStatus) MarshalTo(data []byte) (int, error) {
+func (m *GistChangeStatus) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Deletions != 0 {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Deletions))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Deletions))
 	}
 	if m.Additions != 0 {
-		data[i] = 0x10
+		dAtA[i] = 0x10
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Additions))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Additions))
 	}
 	if m.Total != 0 {
-		data[i] = 0x18
+		dAtA[i] = 0x18
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Total))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Total))
 	}
 	return i, nil
 }
 
-func (m *GistHistory) Marshal() (data []byte, err error) {
+func (m *GistHistory) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *GistHistory) MarshalTo(data []byte) (int, error) {
+func (m *GistHistory) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Url) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.Version) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Version)))
-		i += copy(data[i:], m.Version)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Version)))
+		i += copy(dAtA[i:], m.Version)
 	}
 	if m.User != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.User.Size()))
-		n2, err := m.User.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.User.Size()))
+		n2, err := m.User.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.ChangeStatus != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.ChangeStatus.Size()))
-		n3, err := m.ChangeStatus.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.ChangeStatus.Size()))
+		n3, err := m.ChangeStatus.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if len(m.CommittedAt) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.CommittedAt)))
-		i += copy(data[i:], m.CommittedAt)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.CommittedAt)))
+		i += copy(dAtA[i:], m.CommittedAt)
 	}
 	return i, nil
 }
 
-func (m *Gist) Marshal() (data []byte, err error) {
+func (m *Gist) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *Gist) MarshalTo(data []byte) (int, error) {
+func (m *Gist) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Url) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.ForksUrl) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.ForksUrl)))
-		i += copy(data[i:], m.ForksUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.ForksUrl)))
+		i += copy(dAtA[i:], m.ForksUrl)
 	}
 	if len(m.CommitsUrl) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.CommitsUrl)))
-		i += copy(data[i:], m.CommitsUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.CommitsUrl)))
+		i += copy(dAtA[i:], m.CommitsUrl)
 	}
 	if m.Id != 0 {
-		data[i] = 0x20
+		dAtA[i] = 0x20
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Id))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Id))
 	}
 	if len(m.Description) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Description)))
-		i += copy(data[i:], m.Description)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Description)))
+		i += copy(dAtA[i:], m.Description)
 	}
 	if m.Public {
-		data[i] = 0x30
+		dAtA[i] = 0x30
 		i++
 		if m.Public {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Owner != nil {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Owner.Size()))
-		n4, err := m.Owner.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Owner.Size()))
+		n4, err := m.Owner.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.User != nil {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.User.Size()))
-		n5, err := m.User.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.User.Size()))
+		n5, err := m.User.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -386,7 +386,7 @@ func (m *Gist) MarshalTo(data []byte) (int, error) {
 	}
 	if len(m.Files) > 0 {
 		for k, _ := range m.Files {
-			data[i] = 0x4a
+			dAtA[i] = 0x4a
 			i++
 			v := m.Files[k]
 			msgSize := 0
@@ -395,16 +395,16 @@ func (m *Gist) MarshalTo(data []byte) (int, error) {
 				msgSize += 1 + sovGistEvent(uint64(msgSize))
 			}
 			mapSize := 1 + len(k) + sovGistEvent(uint64(len(k))) + msgSize
-			i = encodeVarintGistEvent(data, i, uint64(mapSize))
-			data[i] = 0xa
+			i = encodeVarintGistEvent(dAtA, i, uint64(mapSize))
+			dAtA[i] = 0xa
 			i++
-			i = encodeVarintGistEvent(data, i, uint64(len(k)))
-			i += copy(data[i:], k)
+			i = encodeVarintGistEvent(dAtA, i, uint64(len(k)))
+			i += copy(dAtA[i:], k)
 			if v != nil {
-				data[i] = 0x12
+				dAtA[i] = 0x12
 				i++
-				i = encodeVarintGistEvent(data, i, uint64(v.Size()))
-				n6, err := v.MarshalTo(data[i:])
+				i = encodeVarintGistEvent(dAtA, i, uint64(v.Size()))
+				n6, err := v.MarshalTo(dAtA[i:])
 				if err != nil {
 					return 0, err
 				}
@@ -413,68 +413,68 @@ func (m *Gist) MarshalTo(data []byte) (int, error) {
 		}
 	}
 	if m.Truncated {
-		data[i] = 0x50
+		dAtA[i] = 0x50
 		i++
 		if m.Truncated {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Comments != 0 {
-		data[i] = 0x58
+		dAtA[i] = 0x58
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Comments))
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Comments))
 	}
 	if len(m.CommentsUrl) > 0 {
-		data[i] = 0x62
+		dAtA[i] = 0x62
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.CommentsUrl)))
-		i += copy(data[i:], m.CommentsUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.CommentsUrl)))
+		i += copy(dAtA[i:], m.CommentsUrl)
 	}
 	if len(m.HtmlUrl) > 0 {
-		data[i] = 0x6a
+		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.HtmlUrl)))
-		i += copy(data[i:], m.HtmlUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.HtmlUrl)))
+		i += copy(dAtA[i:], m.HtmlUrl)
 	}
 	if len(m.GitPullUrl) > 0 {
-		data[i] = 0x72
+		dAtA[i] = 0x72
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.GitPullUrl)))
-		i += copy(data[i:], m.GitPullUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.GitPullUrl)))
+		i += copy(dAtA[i:], m.GitPullUrl)
 	}
 	if len(m.GitPushUrl) > 0 {
-		data[i] = 0x7a
+		dAtA[i] = 0x7a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.GitPushUrl)))
-		i += copy(data[i:], m.GitPushUrl)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.GitPushUrl)))
+		i += copy(dAtA[i:], m.GitPushUrl)
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	if len(m.Forks) > 0 {
 		for _, msg := range m.Forks {
-			data[i] = 0x92
+			dAtA[i] = 0x92
 			i++
-			data[i] = 0x1
+			dAtA[i] = 0x1
 			i++
-			i = encodeVarintGistEvent(data, i, uint64(msg.Size()))
-			n, err := msg.MarshalTo(data[i:])
+			i = encodeVarintGistEvent(dAtA, i, uint64(msg.Size()))
+			n, err := msg.MarshalTo(dAtA[i:])
 			if err != nil {
 				return 0, err
 			}
@@ -484,42 +484,42 @@ func (m *Gist) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func (m *GistEvent) Marshal() (data []byte, err error) {
+func (m *GistEvent) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *GistEvent) MarshalTo(data []byte) (int, error) {
+func (m *GistEvent) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Action) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(len(m.Action)))
-		i += copy(data[i:], m.Action)
+		i = encodeVarintGistEvent(dAtA, i, uint64(len(m.Action)))
+		i += copy(dAtA[i:], m.Action)
 	}
 	if m.Gist != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Gist.Size()))
-		n7, err := m.Gist.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Gist.Size()))
+		n7, err := m.Gist.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n7
 	}
 	if m.Installation != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintGistEvent(data, i, uint64(m.Installation.Size()))
-		n8, err := m.Installation.MarshalTo(data[i:])
+		i = encodeVarintGistEvent(dAtA, i, uint64(m.Installation.Size()))
+		n8, err := m.Installation.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -528,31 +528,31 @@ func (m *GistEvent) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64GistEvent(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64GistEvent(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32GistEvent(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32GistEvent(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintGistEvent(data []byte, offset int, v uint64) int {
+func encodeVarintGistEvent(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *GistFile) Size() (n int) {
@@ -766,8 +766,8 @@ func sovGistEvent(x uint64) (n int) {
 func sozGistEvent(x uint64) (n int) {
 	return sovGistEvent(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *GistFile) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *GistFile) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -779,7 +779,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -807,7 +807,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.FileSize |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -826,7 +826,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -841,7 +841,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.RawUrl = string(data[iNdEx:postIndex])
+			m.RawUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -855,7 +855,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -870,7 +870,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Type = string(data[iNdEx:postIndex])
+			m.Type = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -884,7 +884,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -899,7 +899,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Language = string(data[iNdEx:postIndex])
+			m.Language = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 5:
 			if wireType != 0 {
@@ -913,7 +913,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -933,7 +933,7 @@ func (m *GistFile) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -948,11 +948,11 @@ func (m *GistFile) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Content = string(data[iNdEx:postIndex])
+			m.Content = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -971,8 +971,8 @@ func (m *GistFile) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *GistFork) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *GistFork) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -984,7 +984,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1012,7 +1012,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1029,7 +1029,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if m.User == nil {
 				m.User = &User{}
 			}
-			if err := m.User.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.User.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1045,7 +1045,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1060,7 +1060,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1074,7 +1074,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1089,7 +1089,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Id = string(data[iNdEx:postIndex])
+			m.Id = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -1103,7 +1103,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1118,7 +1118,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -1132,7 +1132,7 @@ func (m *GistFork) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1147,11 +1147,11 @@ func (m *GistFork) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1170,8 +1170,8 @@ func (m *GistFork) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *GistChangeStatus) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *GistChangeStatus) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1183,7 +1183,7 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1211,7 +1211,7 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Deletions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1230,7 +1230,7 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Additions |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1249,7 +1249,7 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Total |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1258,7 +1258,7 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 			}
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1277,8 +1277,8 @@ func (m *GistChangeStatus) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *GistHistory) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *GistHistory) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1290,7 +1290,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1318,7 +1318,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1333,7 +1333,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1347,7 +1347,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1362,7 +1362,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Version = string(data[iNdEx:postIndex])
+			m.Version = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1376,7 +1376,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1393,7 +1393,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if m.User == nil {
 				m.User = &User{}
 			}
-			if err := m.User.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.User.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1409,7 +1409,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1426,7 +1426,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if m.ChangeStatus == nil {
 				m.ChangeStatus = &GistChangeStatus{}
 			}
-			if err := m.ChangeStatus.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.ChangeStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1442,7 +1442,7 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1457,11 +1457,11 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommittedAt = string(data[iNdEx:postIndex])
+			m.CommittedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1480,8 +1480,8 @@ func (m *GistHistory) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *Gist) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *Gist) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1493,7 +1493,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1521,7 +1521,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1536,7 +1536,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -1550,7 +1550,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1565,7 +1565,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ForksUrl = string(data[iNdEx:postIndex])
+			m.ForksUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -1579,7 +1579,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1594,7 +1594,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommitsUrl = string(data[iNdEx:postIndex])
+			m.CommitsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 0 {
@@ -1608,7 +1608,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Id |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1627,7 +1627,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1642,7 +1642,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Description = string(data[iNdEx:postIndex])
+			m.Description = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 6:
 			if wireType != 0 {
@@ -1656,7 +1656,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1676,7 +1676,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1693,7 +1693,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if m.Owner == nil {
 				m.Owner = &User{}
 			}
-			if err := m.Owner.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Owner.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1709,7 +1709,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1726,7 +1726,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if m.User == nil {
 				m.User = &User{}
 			}
-			if err := m.User.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.User.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1742,7 +1742,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1764,7 +1764,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				keykey |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1779,7 +1779,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLenmapkey |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1794,7 +1794,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postStringIndexmapkey > l {
 				return io.ErrUnexpectedEOF
 			}
-			mapkey := string(data[iNdEx:postStringIndexmapkey])
+			mapkey := string(dAtA[iNdEx:postStringIndexmapkey])
 			iNdEx = postStringIndexmapkey
 			if m.Files == nil {
 				m.Files = make(map[string]*GistFile)
@@ -1808,7 +1808,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 					if iNdEx >= l {
 						return io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					valuekey |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -1823,7 +1823,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 					if iNdEx >= l {
 						return io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					mapmsglen |= (int(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -1841,7 +1841,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 					return io.ErrUnexpectedEOF
 				}
 				mapvalue := &GistFile{}
-				if err := mapvalue.Unmarshal(data[iNdEx:postmsgIndex]); err != nil {
+				if err := mapvalue.Unmarshal(dAtA[iNdEx:postmsgIndex]); err != nil {
 					return err
 				}
 				iNdEx = postmsgIndex
@@ -1863,7 +1863,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1883,7 +1883,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Comments |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1902,7 +1902,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1917,7 +1917,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommentsUrl = string(data[iNdEx:postIndex])
+			m.CommentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
@@ -1931,7 +1931,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1946,7 +1946,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.HtmlUrl = string(data[iNdEx:postIndex])
+			m.HtmlUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
@@ -1960,7 +1960,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1975,7 +1975,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitPullUrl = string(data[iNdEx:postIndex])
+			m.GitPullUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 15:
 			if wireType != 2 {
@@ -1989,7 +1989,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2004,7 +2004,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitPushUrl = string(data[iNdEx:postIndex])
+			m.GitPushUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 16:
 			if wireType != 2 {
@@ -2018,7 +2018,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2033,7 +2033,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 17:
 			if wireType != 2 {
@@ -2047,7 +2047,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2062,7 +2062,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 18:
 			if wireType != 2 {
@@ -2076,7 +2076,7 @@ func (m *Gist) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2091,13 +2091,13 @@ func (m *Gist) Unmarshal(data []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			m.Forks = append(m.Forks, &GistFork{})
-			if err := m.Forks[len(m.Forks)-1].Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Forks[len(m.Forks)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2116,8 +2116,8 @@ func (m *Gist) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *GistEvent) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *GistEvent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -2129,7 +2129,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -2157,7 +2157,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2172,7 +2172,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Action = string(data[iNdEx:postIndex])
+			m.Action = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -2186,7 +2186,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2203,7 +2203,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 			if m.Gist == nil {
 				m.Gist = &Gist{}
 			}
-			if err := m.Gist.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Gist.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -2219,7 +2219,7 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2236,13 +2236,13 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 			if m.Installation == nil {
 				m.Installation = &Installation{}
 			}
-			if err := m.Installation.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Installation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipGistEvent(data[iNdEx:])
+			skippy, err := skipGistEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -2261,8 +2261,8 @@ func (m *GistEvent) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipGistEvent(data []byte) (n int, err error) {
-	l := len(data)
+func skipGistEvent(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -2273,7 +2273,7 @@ func skipGistEvent(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -2291,7 +2291,7 @@ func skipGistEvent(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -2308,7 +2308,7 @@ func skipGistEvent(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2331,7 +2331,7 @@ func skipGistEvent(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -2342,7 +2342,7 @@ func skipGistEvent(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipGistEvent(data[start:])
+				next, err := skipGistEvent(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

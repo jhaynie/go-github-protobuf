@@ -34,78 +34,78 @@ func (*MembershipEvent) Descriptor() ([]byte, []int) { return fileDescriptorMemb
 func init() {
 	proto.RegisterType((*MembershipEvent)(nil), "github.MembershipEvent")
 }
-func (m *MembershipEvent) Marshal() (data []byte, err error) {
+func (m *MembershipEvent) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *MembershipEvent) MarshalTo(data []byte) (int, error) {
+func (m *MembershipEvent) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Action) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(len(m.Action)))
-		i += copy(data[i:], m.Action)
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(len(m.Action)))
+		i += copy(dAtA[i:], m.Action)
 	}
 	if len(m.Scope) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(len(m.Scope)))
-		i += copy(data[i:], m.Scope)
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(len(m.Scope)))
+		i += copy(dAtA[i:], m.Scope)
 	}
 	if m.Member != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(m.Member.Size()))
-		n1, err := m.Member.MarshalTo(data[i:])
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(m.Member.Size()))
+		n1, err := m.Member.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if m.Sender != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(m.Sender.Size()))
-		n2, err := m.Sender.MarshalTo(data[i:])
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(m.Sender.Size()))
+		n2, err := m.Sender.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.Team != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(m.Team.Size()))
-		n3, err := m.Team.MarshalTo(data[i:])
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(m.Team.Size()))
+		n3, err := m.Team.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Organization != nil {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(m.Organization.Size()))
-		n4, err := m.Organization.MarshalTo(data[i:])
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(m.Organization.Size()))
+		n4, err := m.Organization.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.Installation != nil {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintMembershipEvent(data, i, uint64(m.Installation.Size()))
-		n5, err := m.Installation.MarshalTo(data[i:])
+		i = encodeVarintMembershipEvent(dAtA, i, uint64(m.Installation.Size()))
+		n5, err := m.Installation.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -114,31 +114,31 @@ func (m *MembershipEvent) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64MembershipEvent(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64MembershipEvent(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32MembershipEvent(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32MembershipEvent(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintMembershipEvent(data []byte, offset int, v uint64) int {
+func encodeVarintMembershipEvent(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *MembershipEvent) Size() (n int) {
@@ -188,8 +188,8 @@ func sovMembershipEvent(x uint64) (n int) {
 func sozMembershipEvent(x uint64) (n int) {
 	return sovMembershipEvent(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *MembershipEvent) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *MembershipEvent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -201,7 +201,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -229,7 +229,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -244,7 +244,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Action = string(data[iNdEx:postIndex])
+			m.Action = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -258,7 +258,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -273,7 +273,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Scope = string(data[iNdEx:postIndex])
+			m.Scope = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -287,7 +287,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -304,7 +304,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if m.Member == nil {
 				m.Member = &User{}
 			}
-			if err := m.Member.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Member.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -320,7 +320,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -337,7 +337,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if m.Sender == nil {
 				m.Sender = &User{}
 			}
-			if err := m.Sender.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Sender.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -353,7 +353,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -370,7 +370,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if m.Team == nil {
 				m.Team = &Team{}
 			}
-			if err := m.Team.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Team.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -386,7 +386,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -403,7 +403,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if m.Organization == nil {
 				m.Organization = &User{}
 			}
-			if err := m.Organization.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Organization.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -419,7 +419,7 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -436,13 +436,13 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 			if m.Installation == nil {
 				m.Installation = &Installation{}
 			}
-			if err := m.Installation.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Installation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipMembershipEvent(data[iNdEx:])
+			skippy, err := skipMembershipEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -461,8 +461,8 @@ func (m *MembershipEvent) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipMembershipEvent(data []byte) (n int, err error) {
-	l := len(data)
+func skipMembershipEvent(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -473,7 +473,7 @@ func skipMembershipEvent(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -491,7 +491,7 @@ func skipMembershipEvent(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -508,7 +508,7 @@ func skipMembershipEvent(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -531,7 +531,7 @@ func skipMembershipEvent(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -542,7 +542,7 @@ func skipMembershipEvent(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipMembershipEvent(data[start:])
+				next, err := skipMembershipEvent(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

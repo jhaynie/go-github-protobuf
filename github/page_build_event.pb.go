@@ -60,168 +60,168 @@ func init() {
 	proto.RegisterType((*Build)(nil), "github.Build")
 	proto.RegisterType((*PageBuildEvent)(nil), "github.PageBuildEvent")
 }
-func (m *BuildError) Marshal() (data []byte, err error) {
+func (m *BuildError) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *BuildError) MarshalTo(data []byte) (int, error) {
+func (m *BuildError) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Message) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.Message)))
-		i += copy(data[i:], m.Message)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.Message)))
+		i += copy(dAtA[i:], m.Message)
 	}
 	return i, nil
 }
 
-func (m *Build) Marshal() (data []byte, err error) {
+func (m *Build) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *Build) MarshalTo(data []byte) (int, error) {
+func (m *Build) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Url) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.Status) > 0 {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.Status)))
-		i += copy(data[i:], m.Status)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.Status)))
+		i += copy(dAtA[i:], m.Status)
 	}
 	if m.Error != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Error.Size()))
-		n1, err := m.Error.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Error.Size()))
+		n1, err := m.Error.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if m.Pusher != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Pusher.Size()))
-		n2, err := m.Pusher.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Pusher.Size()))
+		n2, err := m.Pusher.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if len(m.Commit) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.Commit)))
-		i += copy(data[i:], m.Commit)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.Commit)))
+		i += copy(dAtA[i:], m.Commit)
 	}
 	if m.Duration != 0 {
-		data[i] = 0x30
+		dAtA[i] = 0x30
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Duration))
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Duration))
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	return i, nil
 }
 
-func (m *PageBuildEvent) Marshal() (data []byte, err error) {
+func (m *PageBuildEvent) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *PageBuildEvent) MarshalTo(data []byte) (int, error) {
+func (m *PageBuildEvent) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Id != 0 {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Id))
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Id))
 	}
 	if m.Build != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Build.Size()))
-		n3, err := m.Build.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Build.Size()))
+		n3, err := m.Build.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Repository != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Repository.Size()))
-		n4, err := m.Repository.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Repository.Size()))
+		n4, err := m.Repository.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.Sender != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Sender.Size()))
-		n5, err := m.Sender.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Sender.Size()))
+		n5, err := m.Sender.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
 	if m.Installation != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Installation.Size()))
-		n6, err := m.Installation.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Installation.Size()))
+		n6, err := m.Installation.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n6
 	}
 	if m.Organization != nil {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintPageBuildEvent(data, i, uint64(m.Organization.Size()))
-		n7, err := m.Organization.MarshalTo(data[i:])
+		i = encodeVarintPageBuildEvent(dAtA, i, uint64(m.Organization.Size()))
+		n7, err := m.Organization.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -230,31 +230,31 @@ func (m *PageBuildEvent) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64PageBuildEvent(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64PageBuildEvent(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32PageBuildEvent(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32PageBuildEvent(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintPageBuildEvent(data []byte, offset int, v uint64) int {
+func encodeVarintPageBuildEvent(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *BuildError) Size() (n int) {
@@ -346,8 +346,8 @@ func sovPageBuildEvent(x uint64) (n int) {
 func sozPageBuildEvent(x uint64) (n int) {
 	return sovPageBuildEvent(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *BuildError) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *BuildError) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -359,7 +359,7 @@ func (m *BuildError) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -387,7 +387,7 @@ func (m *BuildError) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -402,11 +402,11 @@ func (m *BuildError) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Message = string(data[iNdEx:postIndex])
+			m.Message = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPageBuildEvent(data[iNdEx:])
+			skippy, err := skipPageBuildEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -425,8 +425,8 @@ func (m *BuildError) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *Build) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *Build) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -438,7 +438,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -466,7 +466,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -481,7 +481,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 2 {
@@ -495,7 +495,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -510,7 +510,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Status = string(data[iNdEx:postIndex])
+			m.Status = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
@@ -524,7 +524,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -541,7 +541,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if m.Error == nil {
 				m.Error = &BuildError{}
 			}
-			if err := m.Error.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Error.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -557,7 +557,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -574,7 +574,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if m.Pusher == nil {
 				m.Pusher = &User{}
 			}
-			if err := m.Pusher.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Pusher.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -590,7 +590,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -605,7 +605,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Commit = string(data[iNdEx:postIndex])
+			m.Commit = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 6:
 			if wireType != 0 {
@@ -619,7 +619,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Duration |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -638,7 +638,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -653,7 +653,7 @@ func (m *Build) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
@@ -667,7 +667,7 @@ func (m *Build) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -682,11 +682,11 @@ func (m *Build) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPageBuildEvent(data[iNdEx:])
+			skippy, err := skipPageBuildEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -705,8 +705,8 @@ func (m *Build) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *PageBuildEvent) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *PageBuildEvent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -718,7 +718,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -746,7 +746,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Id |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -765,7 +765,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -782,7 +782,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if m.Build == nil {
 				m.Build = &Build{}
 			}
-			if err := m.Build.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Build.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -798,7 +798,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -815,7 +815,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if m.Repository == nil {
 				m.Repository = &Repository{}
 			}
-			if err := m.Repository.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Repository.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -831,7 +831,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -848,7 +848,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if m.Sender == nil {
 				m.Sender = &User{}
 			}
-			if err := m.Sender.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Sender.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -864,7 +864,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -881,7 +881,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if m.Installation == nil {
 				m.Installation = &Installation{}
 			}
-			if err := m.Installation.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Installation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -897,7 +897,7 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -914,13 +914,13 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 			if m.Organization == nil {
 				m.Organization = &User{}
 			}
-			if err := m.Organization.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Organization.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipPageBuildEvent(data[iNdEx:])
+			skippy, err := skipPageBuildEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -939,8 +939,8 @@ func (m *PageBuildEvent) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipPageBuildEvent(data []byte) (n int, err error) {
-	l := len(data)
+func skipPageBuildEvent(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -951,7 +951,7 @@ func skipPageBuildEvent(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -969,7 +969,7 @@ func skipPageBuildEvent(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -986,7 +986,7 @@ func skipPageBuildEvent(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1009,7 +1009,7 @@ func skipPageBuildEvent(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -1020,7 +1020,7 @@ func skipPageBuildEvent(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipPageBuildEvent(data[start:])
+				next, err := skipPageBuildEvent(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

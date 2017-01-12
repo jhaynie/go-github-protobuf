@@ -114,707 +114,707 @@ func init() {
 	proto.RegisterType((*RepositoryPermission)(nil), "github.RepositoryPermission")
 	proto.RegisterType((*Repository)(nil), "github.Repository")
 }
-func (m *RepositoryPermission) Marshal() (data []byte, err error) {
+func (m *RepositoryPermission) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *RepositoryPermission) MarshalTo(data []byte) (int, error) {
+func (m *RepositoryPermission) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Admin {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
 		if m.Admin {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Push {
-		data[i] = 0x10
+		dAtA[i] = 0x10
 		i++
 		if m.Push {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Pull {
-		data[i] = 0x18
+		dAtA[i] = 0x18
 		i++
 		if m.Pull {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	return i, nil
 }
 
-func (m *Repository) Marshal() (data []byte, err error) {
+func (m *Repository) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *Repository) MarshalTo(data []byte) (int, error) {
+func (m *Repository) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.Id != 0 {
-		data[i] = 0x8
+		dAtA[i] = 0x8
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Id))
+		i = encodeVarintRepository(dAtA, i, uint64(m.Id))
 	}
 	if m.Owner != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Owner.Size()))
-		n1, err := m.Owner.MarshalTo(data[i:])
+		i = encodeVarintRepository(dAtA, i, uint64(m.Owner.Size()))
+		n1, err := m.Owner.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if len(m.Name) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.Name)))
-		i += copy(data[i:], m.Name)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.Name)))
+		i += copy(dAtA[i:], m.Name)
 	}
 	if len(m.FullName) > 0 {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.FullName)))
-		i += copy(data[i:], m.FullName)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.FullName)))
+		i += copy(dAtA[i:], m.FullName)
 	}
 	if len(m.Description) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.Description)))
-		i += copy(data[i:], m.Description)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.Description)))
+		i += copy(dAtA[i:], m.Description)
 	}
 	if m.Private {
-		data[i] = 0x30
+		dAtA[i] = 0x30
 		i++
 		if m.Private {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.Fork {
-		data[i] = 0x38
+		dAtA[i] = 0x38
 		i++
 		if m.Fork {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.Url) > 0 {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if len(m.HtmlUrl) > 0 {
-		data[i] = 0x4a
+		dAtA[i] = 0x4a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.HtmlUrl)))
-		i += copy(data[i:], m.HtmlUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.HtmlUrl)))
+		i += copy(dAtA[i:], m.HtmlUrl)
 	}
 	if len(m.ArchiveUrl) > 0 {
-		data[i] = 0x52
+		dAtA[i] = 0x52
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.ArchiveUrl)))
-		i += copy(data[i:], m.ArchiveUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.ArchiveUrl)))
+		i += copy(dAtA[i:], m.ArchiveUrl)
 	}
 	if len(m.AssigneesUrl) > 0 {
-		data[i] = 0x5a
+		dAtA[i] = 0x5a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.AssigneesUrl)))
-		i += copy(data[i:], m.AssigneesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.AssigneesUrl)))
+		i += copy(dAtA[i:], m.AssigneesUrl)
 	}
 	if len(m.BlobsUrl) > 0 {
-		data[i] = 0x62
+		dAtA[i] = 0x62
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.BlobsUrl)))
-		i += copy(data[i:], m.BlobsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.BlobsUrl)))
+		i += copy(dAtA[i:], m.BlobsUrl)
 	}
 	if len(m.BranchesUrl) > 0 {
-		data[i] = 0x6a
+		dAtA[i] = 0x6a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.BranchesUrl)))
-		i += copy(data[i:], m.BranchesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.BranchesUrl)))
+		i += copy(dAtA[i:], m.BranchesUrl)
 	}
 	if len(m.CloneUrl) > 0 {
-		data[i] = 0x72
+		dAtA[i] = 0x72
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CloneUrl)))
-		i += copy(data[i:], m.CloneUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CloneUrl)))
+		i += copy(dAtA[i:], m.CloneUrl)
 	}
 	if len(m.CollaboratorsUrl) > 0 {
-		data[i] = 0x7a
+		dAtA[i] = 0x7a
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CollaboratorsUrl)))
-		i += copy(data[i:], m.CollaboratorsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CollaboratorsUrl)))
+		i += copy(dAtA[i:], m.CollaboratorsUrl)
 	}
 	if len(m.CommentsUrl) > 0 {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CommentsUrl)))
-		i += copy(data[i:], m.CommentsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CommentsUrl)))
+		i += copy(dAtA[i:], m.CommentsUrl)
 	}
 	if len(m.CommitsUrl) > 0 {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CommitsUrl)))
-		i += copy(data[i:], m.CommitsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CommitsUrl)))
+		i += copy(dAtA[i:], m.CommitsUrl)
 	}
 	if len(m.CompareUrl) > 0 {
-		data[i] = 0x92
+		dAtA[i] = 0x92
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CompareUrl)))
-		i += copy(data[i:], m.CompareUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CompareUrl)))
+		i += copy(dAtA[i:], m.CompareUrl)
 	}
 	if len(m.ContentsUrl) > 0 {
-		data[i] = 0x9a
+		dAtA[i] = 0x9a
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.ContentsUrl)))
-		i += copy(data[i:], m.ContentsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.ContentsUrl)))
+		i += copy(dAtA[i:], m.ContentsUrl)
 	}
 	if len(m.ContributorsUrl) > 0 {
-		data[i] = 0xa2
+		dAtA[i] = 0xa2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.ContributorsUrl)))
-		i += copy(data[i:], m.ContributorsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.ContributorsUrl)))
+		i += copy(dAtA[i:], m.ContributorsUrl)
 	}
 	if len(m.DeploymentsUrl) > 0 {
-		data[i] = 0xaa
+		dAtA[i] = 0xaa
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.DeploymentsUrl)))
-		i += copy(data[i:], m.DeploymentsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.DeploymentsUrl)))
+		i += copy(dAtA[i:], m.DeploymentsUrl)
 	}
 	if len(m.DownloadsUrl) > 0 {
-		data[i] = 0xb2
+		dAtA[i] = 0xb2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.DownloadsUrl)))
-		i += copy(data[i:], m.DownloadsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.DownloadsUrl)))
+		i += copy(dAtA[i:], m.DownloadsUrl)
 	}
 	if len(m.EventsUrl) > 0 {
-		data[i] = 0xba
+		dAtA[i] = 0xba
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.EventsUrl)))
-		i += copy(data[i:], m.EventsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.EventsUrl)))
+		i += copy(dAtA[i:], m.EventsUrl)
 	}
 	if len(m.ForksUrl) > 0 {
-		data[i] = 0xc2
+		dAtA[i] = 0xc2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.ForksUrl)))
-		i += copy(data[i:], m.ForksUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.ForksUrl)))
+		i += copy(dAtA[i:], m.ForksUrl)
 	}
 	if len(m.GitCommitsUrl) > 0 {
-		data[i] = 0xca
+		dAtA[i] = 0xca
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.GitCommitsUrl)))
-		i += copy(data[i:], m.GitCommitsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.GitCommitsUrl)))
+		i += copy(dAtA[i:], m.GitCommitsUrl)
 	}
 	if len(m.GitRefsUrl) > 0 {
-		data[i] = 0xd2
+		dAtA[i] = 0xd2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.GitRefsUrl)))
-		i += copy(data[i:], m.GitRefsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.GitRefsUrl)))
+		i += copy(dAtA[i:], m.GitRefsUrl)
 	}
 	if len(m.GitTagsUrl) > 0 {
-		data[i] = 0xda
+		dAtA[i] = 0xda
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.GitTagsUrl)))
-		i += copy(data[i:], m.GitTagsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.GitTagsUrl)))
+		i += copy(dAtA[i:], m.GitTagsUrl)
 	}
 	if len(m.GitUrl) > 0 {
-		data[i] = 0xe2
+		dAtA[i] = 0xe2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.GitUrl)))
-		i += copy(data[i:], m.GitUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.GitUrl)))
+		i += copy(dAtA[i:], m.GitUrl)
 	}
 	if len(m.HooksUrl) > 0 {
-		data[i] = 0xea
+		dAtA[i] = 0xea
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.HooksUrl)))
-		i += copy(data[i:], m.HooksUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.HooksUrl)))
+		i += copy(dAtA[i:], m.HooksUrl)
 	}
 	if len(m.IssueCommentUrl) > 0 {
-		data[i] = 0xf2
+		dAtA[i] = 0xf2
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.IssueCommentUrl)))
-		i += copy(data[i:], m.IssueCommentUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.IssueCommentUrl)))
+		i += copy(dAtA[i:], m.IssueCommentUrl)
 	}
 	if len(m.IssueEventsUrl) > 0 {
-		data[i] = 0xfa
+		dAtA[i] = 0xfa
 		i++
-		data[i] = 0x1
+		dAtA[i] = 0x1
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.IssueEventsUrl)))
-		i += copy(data[i:], m.IssueEventsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.IssueEventsUrl)))
+		i += copy(dAtA[i:], m.IssueEventsUrl)
 	}
 	if len(m.IssuesUrl) > 0 {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.IssuesUrl)))
-		i += copy(data[i:], m.IssuesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.IssuesUrl)))
+		i += copy(dAtA[i:], m.IssuesUrl)
 	}
 	if len(m.KeysUrl) > 0 {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.KeysUrl)))
-		i += copy(data[i:], m.KeysUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.KeysUrl)))
+		i += copy(dAtA[i:], m.KeysUrl)
 	}
 	if len(m.LabelsUrl) > 0 {
-		data[i] = 0x92
+		dAtA[i] = 0x92
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.LabelsUrl)))
-		i += copy(data[i:], m.LabelsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.LabelsUrl)))
+		i += copy(dAtA[i:], m.LabelsUrl)
 	}
 	if len(m.LanguagesUrl) > 0 {
-		data[i] = 0x9a
+		dAtA[i] = 0x9a
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.LanguagesUrl)))
-		i += copy(data[i:], m.LanguagesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.LanguagesUrl)))
+		i += copy(dAtA[i:], m.LanguagesUrl)
 	}
 	if len(m.MergesUrl) > 0 {
-		data[i] = 0xa2
+		dAtA[i] = 0xa2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.MergesUrl)))
-		i += copy(data[i:], m.MergesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.MergesUrl)))
+		i += copy(dAtA[i:], m.MergesUrl)
 	}
 	if len(m.MilestonesUrl) > 0 {
-		data[i] = 0xaa
+		dAtA[i] = 0xaa
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.MilestonesUrl)))
-		i += copy(data[i:], m.MilestonesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.MilestonesUrl)))
+		i += copy(dAtA[i:], m.MilestonesUrl)
 	}
 	if len(m.MirrorUrl) > 0 {
-		data[i] = 0xb2
+		dAtA[i] = 0xb2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.MirrorUrl)))
-		i += copy(data[i:], m.MirrorUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.MirrorUrl)))
+		i += copy(dAtA[i:], m.MirrorUrl)
 	}
 	if len(m.NotificationsUrl) > 0 {
-		data[i] = 0xba
+		dAtA[i] = 0xba
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.NotificationsUrl)))
-		i += copy(data[i:], m.NotificationsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.NotificationsUrl)))
+		i += copy(dAtA[i:], m.NotificationsUrl)
 	}
 	if len(m.PullsUrl) > 0 {
-		data[i] = 0xc2
+		dAtA[i] = 0xc2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.PullsUrl)))
-		i += copy(data[i:], m.PullsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.PullsUrl)))
+		i += copy(dAtA[i:], m.PullsUrl)
 	}
 	if len(m.ReleasesUrl) > 0 {
-		data[i] = 0xca
+		dAtA[i] = 0xca
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.ReleasesUrl)))
-		i += copy(data[i:], m.ReleasesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.ReleasesUrl)))
+		i += copy(dAtA[i:], m.ReleasesUrl)
 	}
 	if len(m.SshUrl) > 0 {
-		data[i] = 0xd2
+		dAtA[i] = 0xd2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.SshUrl)))
-		i += copy(data[i:], m.SshUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.SshUrl)))
+		i += copy(dAtA[i:], m.SshUrl)
 	}
 	if len(m.StargazersUrl) > 0 {
-		data[i] = 0xda
+		dAtA[i] = 0xda
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.StargazersUrl)))
-		i += copy(data[i:], m.StargazersUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.StargazersUrl)))
+		i += copy(dAtA[i:], m.StargazersUrl)
 	}
 	if len(m.StatusesUrl) > 0 {
-		data[i] = 0xe2
+		dAtA[i] = 0xe2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.StatusesUrl)))
-		i += copy(data[i:], m.StatusesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.StatusesUrl)))
+		i += copy(dAtA[i:], m.StatusesUrl)
 	}
 	if len(m.SubscribersUrl) > 0 {
-		data[i] = 0xea
+		dAtA[i] = 0xea
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.SubscribersUrl)))
-		i += copy(data[i:], m.SubscribersUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.SubscribersUrl)))
+		i += copy(dAtA[i:], m.SubscribersUrl)
 	}
 	if len(m.SubscriptionUrl) > 0 {
-		data[i] = 0xf2
+		dAtA[i] = 0xf2
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.SubscriptionUrl)))
-		i += copy(data[i:], m.SubscriptionUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.SubscriptionUrl)))
+		i += copy(dAtA[i:], m.SubscriptionUrl)
 	}
 	if len(m.SvnUrl) > 0 {
-		data[i] = 0xfa
+		dAtA[i] = 0xfa
 		i++
-		data[i] = 0x2
+		dAtA[i] = 0x2
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.SvnUrl)))
-		i += copy(data[i:], m.SvnUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.SvnUrl)))
+		i += copy(dAtA[i:], m.SvnUrl)
 	}
 	if len(m.TagsUrl) > 0 {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.TagsUrl)))
-		i += copy(data[i:], m.TagsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.TagsUrl)))
+		i += copy(dAtA[i:], m.TagsUrl)
 	}
 	if len(m.TeamsUrl) > 0 {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.TeamsUrl)))
-		i += copy(data[i:], m.TeamsUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.TeamsUrl)))
+		i += copy(dAtA[i:], m.TeamsUrl)
 	}
 	if len(m.TreesUrl) > 0 {
-		data[i] = 0x92
+		dAtA[i] = 0x92
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.TreesUrl)))
-		i += copy(data[i:], m.TreesUrl)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.TreesUrl)))
+		i += copy(dAtA[i:], m.TreesUrl)
 	}
 	if len(m.Homepage) > 0 {
-		data[i] = 0x9a
+		dAtA[i] = 0x9a
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.Homepage)))
-		i += copy(data[i:], m.Homepage)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.Homepage)))
+		i += copy(dAtA[i:], m.Homepage)
 	}
 	if len(m.Language) > 0 {
-		data[i] = 0xa2
+		dAtA[i] = 0xa2
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.Language)))
-		i += copy(data[i:], m.Language)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.Language)))
+		i += copy(dAtA[i:], m.Language)
 	}
 	if m.ForksCount != 0 {
-		data[i] = 0xa8
+		dAtA[i] = 0xa8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.ForksCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.ForksCount))
 	}
 	if m.StargazersCount != 0 {
-		data[i] = 0xb0
+		dAtA[i] = 0xb0
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.StargazersCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.StargazersCount))
 	}
 	if m.WatchersCount != 0 {
-		data[i] = 0xb8
+		dAtA[i] = 0xb8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.WatchersCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.WatchersCount))
 	}
 	if m.NetworkCount != 0 {
-		data[i] = 0xc0
+		dAtA[i] = 0xc0
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.NetworkCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.NetworkCount))
 	}
 	if m.RepoSize != 0 {
-		data[i] = 0xc8
+		dAtA[i] = 0xc8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.RepoSize))
+		i = encodeVarintRepository(dAtA, i, uint64(m.RepoSize))
 	}
 	if len(m.DefaultBranch) > 0 {
-		data[i] = 0xd2
+		dAtA[i] = 0xd2
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.DefaultBranch)))
-		i += copy(data[i:], m.DefaultBranch)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.DefaultBranch)))
+		i += copy(dAtA[i:], m.DefaultBranch)
 	}
 	if m.OpenIssuesCount != 0 {
-		data[i] = 0xd8
+		dAtA[i] = 0xd8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.OpenIssuesCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.OpenIssuesCount))
 	}
 	if m.HasIssues {
-		data[i] = 0xe0
+		dAtA[i] = 0xe0
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
 		if m.HasIssues {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.HasWiki {
-		data[i] = 0xe8
+		dAtA[i] = 0xe8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
 		if m.HasWiki {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.HasPages {
-		data[i] = 0xf0
+		dAtA[i] = 0xf0
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
 		if m.HasPages {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.HasDownloads {
-		data[i] = 0xf8
+		dAtA[i] = 0xf8
 		i++
-		data[i] = 0x3
+		dAtA[i] = 0x3
 		i++
 		if m.HasDownloads {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if len(m.PushedAt) > 0 {
-		data[i] = 0x82
+		dAtA[i] = 0x82
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.PushedAt)))
-		i += copy(data[i:], m.PushedAt)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.PushedAt)))
+		i += copy(dAtA[i:], m.PushedAt)
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x8a
+		dAtA[i] = 0x8a
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0x92
+		dAtA[i] = 0x92
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintRepository(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	if m.Permissions != nil {
-		data[i] = 0x9a
+		dAtA[i] = 0x9a
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Permissions.Size()))
-		n2, err := m.Permissions.MarshalTo(data[i:])
+		i = encodeVarintRepository(dAtA, i, uint64(m.Permissions.Size()))
+		n2, err := m.Permissions.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.SubscribersCount != 0 {
-		data[i] = 0xa0
+		dAtA[i] = 0xa0
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.SubscribersCount))
+		i = encodeVarintRepository(dAtA, i, uint64(m.SubscribersCount))
 	}
 	if m.Organization != nil {
-		data[i] = 0xaa
+		dAtA[i] = 0xaa
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Organization.Size()))
-		n3, err := m.Organization.MarshalTo(data[i:])
+		i = encodeVarintRepository(dAtA, i, uint64(m.Organization.Size()))
+		n3, err := m.Organization.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Parent != nil {
-		data[i] = 0xb2
+		dAtA[i] = 0xb2
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Parent.Size()))
-		n4, err := m.Parent.MarshalTo(data[i:])
+		i = encodeVarintRepository(dAtA, i, uint64(m.Parent.Size()))
+		n4, err := m.Parent.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.Source != nil {
-		data[i] = 0xba
+		dAtA[i] = 0xba
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
-		i = encodeVarintRepository(data, i, uint64(m.Source.Size()))
-		n5, err := m.Source.MarshalTo(data[i:])
+		i = encodeVarintRepository(dAtA, i, uint64(m.Source.Size()))
+		n5, err := m.Source.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
 	if m.AllowRebaseMerge {
-		data[i] = 0xc0
+		dAtA[i] = 0xc0
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
 		if m.AllowRebaseMerge {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.AllowSquashMerge {
-		data[i] = 0xc8
+		dAtA[i] = 0xc8
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
 		if m.AllowSquashMerge {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	if m.AllowMergeCommit {
-		data[i] = 0xd0
+		dAtA[i] = 0xd0
 		i++
-		data[i] = 0x4
+		dAtA[i] = 0x4
 		i++
 		if m.AllowMergeCommit {
-			data[i] = 1
+			dAtA[i] = 1
 		} else {
-			data[i] = 0
+			dAtA[i] = 0
 		}
 		i++
 	}
 	return i, nil
 }
 
-func encodeFixed64Repository(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64Repository(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32Repository(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32Repository(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintRepository(data []byte, offset int, v uint64) int {
+func encodeVarintRepository(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *RepositoryPermission) Size() (n int) {
@@ -1130,8 +1130,8 @@ func sovRepository(x uint64) (n int) {
 func sozRepository(x uint64) (n int) {
 	return sovRepository(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *RepositoryPermission) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *RepositoryPermission) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1143,7 +1143,7 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1171,7 +1171,7 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1191,7 +1191,7 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1211,7 +1211,7 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1221,7 +1221,7 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 			m.Pull = bool(v != 0)
 		default:
 			iNdEx = preIndex
-			skippy, err := skipRepository(data[iNdEx:])
+			skippy, err := skipRepository(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -1240,8 +1240,8 @@ func (m *RepositoryPermission) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *Repository) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *Repository) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -1253,7 +1253,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -1281,7 +1281,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Id |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1300,7 +1300,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1317,7 +1317,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if m.Owner == nil {
 				m.Owner = &User{}
 			}
-			if err := m.Owner.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Owner.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -1333,7 +1333,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1348,7 +1348,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Name = string(data[iNdEx:postIndex])
+			m.Name = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -1362,7 +1362,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1377,7 +1377,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.FullName = string(data[iNdEx:postIndex])
+			m.FullName = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
@@ -1391,7 +1391,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1406,7 +1406,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Description = string(data[iNdEx:postIndex])
+			m.Description = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 6:
 			if wireType != 0 {
@@ -1420,7 +1420,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1440,7 +1440,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1460,7 +1460,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1475,7 +1475,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
@@ -1489,7 +1489,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1504,7 +1504,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.HtmlUrl = string(data[iNdEx:postIndex])
+			m.HtmlUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
@@ -1518,7 +1518,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1533,7 +1533,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ArchiveUrl = string(data[iNdEx:postIndex])
+			m.ArchiveUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 11:
 			if wireType != 2 {
@@ -1547,7 +1547,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1562,7 +1562,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.AssigneesUrl = string(data[iNdEx:postIndex])
+			m.AssigneesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 12:
 			if wireType != 2 {
@@ -1576,7 +1576,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1591,7 +1591,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.BlobsUrl = string(data[iNdEx:postIndex])
+			m.BlobsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 13:
 			if wireType != 2 {
@@ -1605,7 +1605,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1620,7 +1620,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.BranchesUrl = string(data[iNdEx:postIndex])
+			m.BranchesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 14:
 			if wireType != 2 {
@@ -1634,7 +1634,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1649,7 +1649,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CloneUrl = string(data[iNdEx:postIndex])
+			m.CloneUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 15:
 			if wireType != 2 {
@@ -1663,7 +1663,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1678,7 +1678,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CollaboratorsUrl = string(data[iNdEx:postIndex])
+			m.CollaboratorsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 16:
 			if wireType != 2 {
@@ -1692,7 +1692,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1707,7 +1707,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommentsUrl = string(data[iNdEx:postIndex])
+			m.CommentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 17:
 			if wireType != 2 {
@@ -1721,7 +1721,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1736,7 +1736,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CommitsUrl = string(data[iNdEx:postIndex])
+			m.CommitsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 18:
 			if wireType != 2 {
@@ -1750,7 +1750,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1765,7 +1765,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CompareUrl = string(data[iNdEx:postIndex])
+			m.CompareUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 19:
 			if wireType != 2 {
@@ -1779,7 +1779,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1794,7 +1794,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ContentsUrl = string(data[iNdEx:postIndex])
+			m.ContentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 20:
 			if wireType != 2 {
@@ -1808,7 +1808,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1823,7 +1823,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ContributorsUrl = string(data[iNdEx:postIndex])
+			m.ContributorsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 21:
 			if wireType != 2 {
@@ -1837,7 +1837,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1852,7 +1852,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DeploymentsUrl = string(data[iNdEx:postIndex])
+			m.DeploymentsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 22:
 			if wireType != 2 {
@@ -1866,7 +1866,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1881,7 +1881,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DownloadsUrl = string(data[iNdEx:postIndex])
+			m.DownloadsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 23:
 			if wireType != 2 {
@@ -1895,7 +1895,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1910,7 +1910,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.EventsUrl = string(data[iNdEx:postIndex])
+			m.EventsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 24:
 			if wireType != 2 {
@@ -1924,7 +1924,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1939,7 +1939,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ForksUrl = string(data[iNdEx:postIndex])
+			m.ForksUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 25:
 			if wireType != 2 {
@@ -1953,7 +1953,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1968,7 +1968,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitCommitsUrl = string(data[iNdEx:postIndex])
+			m.GitCommitsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 26:
 			if wireType != 2 {
@@ -1982,7 +1982,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -1997,7 +1997,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitRefsUrl = string(data[iNdEx:postIndex])
+			m.GitRefsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 27:
 			if wireType != 2 {
@@ -2011,7 +2011,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2026,7 +2026,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitTagsUrl = string(data[iNdEx:postIndex])
+			m.GitTagsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 28:
 			if wireType != 2 {
@@ -2040,7 +2040,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2055,7 +2055,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.GitUrl = string(data[iNdEx:postIndex])
+			m.GitUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 29:
 			if wireType != 2 {
@@ -2069,7 +2069,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2084,7 +2084,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.HooksUrl = string(data[iNdEx:postIndex])
+			m.HooksUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 30:
 			if wireType != 2 {
@@ -2098,7 +2098,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2113,7 +2113,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.IssueCommentUrl = string(data[iNdEx:postIndex])
+			m.IssueCommentUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 31:
 			if wireType != 2 {
@@ -2127,7 +2127,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2142,7 +2142,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.IssueEventsUrl = string(data[iNdEx:postIndex])
+			m.IssueEventsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 32:
 			if wireType != 2 {
@@ -2156,7 +2156,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2171,7 +2171,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.IssuesUrl = string(data[iNdEx:postIndex])
+			m.IssuesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 33:
 			if wireType != 2 {
@@ -2185,7 +2185,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2200,7 +2200,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.KeysUrl = string(data[iNdEx:postIndex])
+			m.KeysUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 34:
 			if wireType != 2 {
@@ -2214,7 +2214,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2229,7 +2229,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.LabelsUrl = string(data[iNdEx:postIndex])
+			m.LabelsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 35:
 			if wireType != 2 {
@@ -2243,7 +2243,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2258,7 +2258,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.LanguagesUrl = string(data[iNdEx:postIndex])
+			m.LanguagesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 36:
 			if wireType != 2 {
@@ -2272,7 +2272,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2287,7 +2287,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MergesUrl = string(data[iNdEx:postIndex])
+			m.MergesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 37:
 			if wireType != 2 {
@@ -2301,7 +2301,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2316,7 +2316,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MilestonesUrl = string(data[iNdEx:postIndex])
+			m.MilestonesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 38:
 			if wireType != 2 {
@@ -2330,7 +2330,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2345,7 +2345,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.MirrorUrl = string(data[iNdEx:postIndex])
+			m.MirrorUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 39:
 			if wireType != 2 {
@@ -2359,7 +2359,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2374,7 +2374,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.NotificationsUrl = string(data[iNdEx:postIndex])
+			m.NotificationsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 40:
 			if wireType != 2 {
@@ -2388,7 +2388,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2403,7 +2403,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.PullsUrl = string(data[iNdEx:postIndex])
+			m.PullsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 41:
 			if wireType != 2 {
@@ -2417,7 +2417,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2432,7 +2432,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.ReleasesUrl = string(data[iNdEx:postIndex])
+			m.ReleasesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 42:
 			if wireType != 2 {
@@ -2446,7 +2446,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2461,7 +2461,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.SshUrl = string(data[iNdEx:postIndex])
+			m.SshUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 43:
 			if wireType != 2 {
@@ -2475,7 +2475,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2490,7 +2490,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.StargazersUrl = string(data[iNdEx:postIndex])
+			m.StargazersUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 44:
 			if wireType != 2 {
@@ -2504,7 +2504,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2519,7 +2519,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.StatusesUrl = string(data[iNdEx:postIndex])
+			m.StatusesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 45:
 			if wireType != 2 {
@@ -2533,7 +2533,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2548,7 +2548,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.SubscribersUrl = string(data[iNdEx:postIndex])
+			m.SubscribersUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 46:
 			if wireType != 2 {
@@ -2562,7 +2562,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2577,7 +2577,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.SubscriptionUrl = string(data[iNdEx:postIndex])
+			m.SubscriptionUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 47:
 			if wireType != 2 {
@@ -2591,7 +2591,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2606,7 +2606,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.SvnUrl = string(data[iNdEx:postIndex])
+			m.SvnUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 48:
 			if wireType != 2 {
@@ -2620,7 +2620,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2635,7 +2635,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.TagsUrl = string(data[iNdEx:postIndex])
+			m.TagsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 49:
 			if wireType != 2 {
@@ -2649,7 +2649,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2664,7 +2664,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.TeamsUrl = string(data[iNdEx:postIndex])
+			m.TeamsUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 50:
 			if wireType != 2 {
@@ -2678,7 +2678,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2693,7 +2693,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.TreesUrl = string(data[iNdEx:postIndex])
+			m.TreesUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 51:
 			if wireType != 2 {
@@ -2707,7 +2707,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2722,7 +2722,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Homepage = string(data[iNdEx:postIndex])
+			m.Homepage = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 52:
 			if wireType != 2 {
@@ -2736,7 +2736,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2751,7 +2751,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Language = string(data[iNdEx:postIndex])
+			m.Language = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 53:
 			if wireType != 0 {
@@ -2765,7 +2765,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.ForksCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2784,7 +2784,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.StargazersCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2803,7 +2803,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.WatchersCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2822,7 +2822,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.NetworkCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2841,7 +2841,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.RepoSize |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2860,7 +2860,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2875,7 +2875,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DefaultBranch = string(data[iNdEx:postIndex])
+			m.DefaultBranch = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 59:
 			if wireType != 0 {
@@ -2889,7 +2889,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.OpenIssuesCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2908,7 +2908,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2928,7 +2928,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2948,7 +2948,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2968,7 +2968,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -2988,7 +2988,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3003,7 +3003,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.PushedAt = string(data[iNdEx:postIndex])
+			m.PushedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 65:
 			if wireType != 2 {
@@ -3017,7 +3017,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3032,7 +3032,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 66:
 			if wireType != 2 {
@@ -3046,7 +3046,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3061,7 +3061,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 67:
 			if wireType != 2 {
@@ -3075,7 +3075,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3092,7 +3092,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if m.Permissions == nil {
 				m.Permissions = &RepositoryPermission{}
 			}
-			if err := m.Permissions.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Permissions.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -3108,7 +3108,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.SubscribersCount |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3127,7 +3127,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3144,7 +3144,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if m.Organization == nil {
 				m.Organization = &User{}
 			}
-			if err := m.Organization.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Organization.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -3160,7 +3160,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3177,7 +3177,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if m.Parent == nil {
 				m.Parent = &Repository{}
 			}
-			if err := m.Parent.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Parent.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -3193,7 +3193,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3210,7 +3210,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			if m.Source == nil {
 				m.Source = &Repository{}
 			}
-			if err := m.Source.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Source.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -3226,7 +3226,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3246,7 +3246,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3266,7 +3266,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				v |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3276,7 +3276,7 @@ func (m *Repository) Unmarshal(data []byte) error {
 			m.AllowMergeCommit = bool(v != 0)
 		default:
 			iNdEx = preIndex
-			skippy, err := skipRepository(data[iNdEx:])
+			skippy, err := skipRepository(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -3295,8 +3295,8 @@ func (m *Repository) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipRepository(data []byte) (n int, err error) {
-	l := len(data)
+func skipRepository(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -3307,7 +3307,7 @@ func skipRepository(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -3325,7 +3325,7 @@ func skipRepository(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -3342,7 +3342,7 @@ func skipRepository(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -3365,7 +3365,7 @@ func skipRepository(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -3376,7 +3376,7 @@ func skipRepository(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipRepository(data[start:])
+				next, err := skipRepository(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}

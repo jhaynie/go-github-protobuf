@@ -54,6 +54,7 @@ var (
 		"public":                                "PublicEvent",
 		"pull_request_review_comment":           "PullRequestReviewCommentEvent",
 		"pull_request":                          "PullRequestEvent",
+		"pull_request_review":                   "PullRequestReviewEvent",
 		"push":                                  "PushEvent",
 		"repository":                            "RepositoryEvent",
 		"release":                               "ReleaseEvent",

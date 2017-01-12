@@ -56,157 +56,157 @@ func init() {
 	proto.RegisterType((*DeploymentStatus)(nil), "github.DeploymentStatus")
 	proto.RegisterType((*DeploymentStatusEvent)(nil), "github.DeploymentStatusEvent")
 }
-func (m *DeploymentStatus) Marshal() (data []byte, err error) {
+func (m *DeploymentStatus) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *DeploymentStatus) MarshalTo(data []byte) (int, error) {
+func (m *DeploymentStatus) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if len(m.Url) > 0 {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.Url)))
-		i += copy(data[i:], m.Url)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.Url)))
+		i += copy(dAtA[i:], m.Url)
 	}
 	if m.Id != 0 {
-		data[i] = 0x10
+		dAtA[i] = 0x10
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Id))
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Id))
 	}
 	if len(m.State) > 0 {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.State)))
-		i += copy(data[i:], m.State)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.State)))
+		i += copy(dAtA[i:], m.State)
 	}
 	if m.Creator != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Creator.Size()))
-		n1, err := m.Creator.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Creator.Size()))
+		n1, err := m.Creator.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n1
 	}
 	if len(m.Description) > 0 {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.Description)))
-		i += copy(data[i:], m.Description)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.Description)))
+		i += copy(dAtA[i:], m.Description)
 	}
 	if len(m.TargetUrl) > 0 {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.TargetUrl)))
-		i += copy(data[i:], m.TargetUrl)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.TargetUrl)))
+		i += copy(dAtA[i:], m.TargetUrl)
 	}
 	if len(m.CreatedAt) > 0 {
-		data[i] = 0x3a
+		dAtA[i] = 0x3a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.CreatedAt)))
-		i += copy(data[i:], m.CreatedAt)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.CreatedAt)))
+		i += copy(dAtA[i:], m.CreatedAt)
 	}
 	if len(m.UpdatedAt) > 0 {
-		data[i] = 0x42
+		dAtA[i] = 0x42
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.UpdatedAt)))
-		i += copy(data[i:], m.UpdatedAt)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.UpdatedAt)))
+		i += copy(dAtA[i:], m.UpdatedAt)
 	}
 	if len(m.DeploymentUrl) > 0 {
-		data[i] = 0x4a
+		dAtA[i] = 0x4a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.DeploymentUrl)))
-		i += copy(data[i:], m.DeploymentUrl)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.DeploymentUrl)))
+		i += copy(dAtA[i:], m.DeploymentUrl)
 	}
 	if len(m.RepositoryUrl) > 0 {
-		data[i] = 0x52
+		dAtA[i] = 0x52
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(len(m.RepositoryUrl)))
-		i += copy(data[i:], m.RepositoryUrl)
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(len(m.RepositoryUrl)))
+		i += copy(dAtA[i:], m.RepositoryUrl)
 	}
 	return i, nil
 }
 
-func (m *DeploymentStatusEvent) Marshal() (data []byte, err error) {
+func (m *DeploymentStatusEvent) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
-	data = make([]byte, size)
-	n, err := m.MarshalTo(data)
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
 	if err != nil {
 		return nil, err
 	}
-	return data[:n], nil
+	return dAtA[:n], nil
 }
 
-func (m *DeploymentStatusEvent) MarshalTo(data []byte) (int, error) {
+func (m *DeploymentStatusEvent) MarshalTo(dAtA []byte) (int, error) {
 	var i int
 	_ = i
 	var l int
 	_ = l
 	if m.DeploymentStatus != nil {
-		data[i] = 0xa
+		dAtA[i] = 0xa
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.DeploymentStatus.Size()))
-		n2, err := m.DeploymentStatus.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.DeploymentStatus.Size()))
+		n2, err := m.DeploymentStatus.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n2
 	}
 	if m.Deployment != nil {
-		data[i] = 0x12
+		dAtA[i] = 0x12
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Deployment.Size()))
-		n3, err := m.Deployment.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Deployment.Size()))
+		n3, err := m.Deployment.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n3
 	}
 	if m.Repository != nil {
-		data[i] = 0x1a
+		dAtA[i] = 0x1a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Repository.Size()))
-		n4, err := m.Repository.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Repository.Size()))
+		n4, err := m.Repository.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n4
 	}
 	if m.Sender != nil {
-		data[i] = 0x22
+		dAtA[i] = 0x22
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Sender.Size()))
-		n5, err := m.Sender.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Sender.Size()))
+		n5, err := m.Sender.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n5
 	}
 	if m.Installation != nil {
-		data[i] = 0x2a
+		dAtA[i] = 0x2a
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Installation.Size()))
-		n6, err := m.Installation.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Installation.Size()))
+		n6, err := m.Installation.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
 		i += n6
 	}
 	if m.Organization != nil {
-		data[i] = 0x32
+		dAtA[i] = 0x32
 		i++
-		i = encodeVarintDeploymentStatusEvent(data, i, uint64(m.Organization.Size()))
-		n7, err := m.Organization.MarshalTo(data[i:])
+		i = encodeVarintDeploymentStatusEvent(dAtA, i, uint64(m.Organization.Size()))
+		n7, err := m.Organization.MarshalTo(dAtA[i:])
 		if err != nil {
 			return 0, err
 		}
@@ -215,31 +215,31 @@ func (m *DeploymentStatusEvent) MarshalTo(data []byte) (int, error) {
 	return i, nil
 }
 
-func encodeFixed64DeploymentStatusEvent(data []byte, offset int, v uint64) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
-	data[offset+4] = uint8(v >> 32)
-	data[offset+5] = uint8(v >> 40)
-	data[offset+6] = uint8(v >> 48)
-	data[offset+7] = uint8(v >> 56)
+func encodeFixed64DeploymentStatusEvent(dAtA []byte, offset int, v uint64) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
+	dAtA[offset+4] = uint8(v >> 32)
+	dAtA[offset+5] = uint8(v >> 40)
+	dAtA[offset+6] = uint8(v >> 48)
+	dAtA[offset+7] = uint8(v >> 56)
 	return offset + 8
 }
-func encodeFixed32DeploymentStatusEvent(data []byte, offset int, v uint32) int {
-	data[offset] = uint8(v)
-	data[offset+1] = uint8(v >> 8)
-	data[offset+2] = uint8(v >> 16)
-	data[offset+3] = uint8(v >> 24)
+func encodeFixed32DeploymentStatusEvent(dAtA []byte, offset int, v uint32) int {
+	dAtA[offset] = uint8(v)
+	dAtA[offset+1] = uint8(v >> 8)
+	dAtA[offset+2] = uint8(v >> 16)
+	dAtA[offset+3] = uint8(v >> 24)
 	return offset + 4
 }
-func encodeVarintDeploymentStatusEvent(data []byte, offset int, v uint64) int {
+func encodeVarintDeploymentStatusEvent(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
-		data[offset] = uint8(v&0x7f | 0x80)
+		dAtA[offset] = uint8(v&0x7f | 0x80)
 		v >>= 7
 		offset++
 	}
-	data[offset] = uint8(v)
+	dAtA[offset] = uint8(v)
 	return offset + 1
 }
 func (m *DeploymentStatus) Size() (n int) {
@@ -330,8 +330,8 @@ func sovDeploymentStatusEvent(x uint64) (n int) {
 func sozDeploymentStatusEvent(x uint64) (n int) {
 	return sovDeploymentStatusEvent(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *DeploymentStatus) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *DeploymentStatus) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -343,7 +343,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -371,7 +371,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -386,7 +386,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Url = string(data[iNdEx:postIndex])
+			m.Url = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
 			if wireType != 0 {
@@ -400,7 +400,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				m.Id |= (int32(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -419,7 +419,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -434,7 +434,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.State = string(data[iNdEx:postIndex])
+			m.State = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {
@@ -448,7 +448,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -465,7 +465,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if m.Creator == nil {
 				m.Creator = &User{}
 			}
-			if err := m.Creator.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Creator.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -481,7 +481,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -496,7 +496,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.Description = string(data[iNdEx:postIndex])
+			m.Description = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 6:
 			if wireType != 2 {
@@ -510,7 +510,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -525,7 +525,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.TargetUrl = string(data[iNdEx:postIndex])
+			m.TargetUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 7:
 			if wireType != 2 {
@@ -539,7 +539,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -554,7 +554,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CreatedAt = string(data[iNdEx:postIndex])
+			m.CreatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
@@ -568,7 +568,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -583,7 +583,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.UpdatedAt = string(data[iNdEx:postIndex])
+			m.UpdatedAt = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 9:
 			if wireType != 2 {
@@ -597,7 +597,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -612,7 +612,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.DeploymentUrl = string(data[iNdEx:postIndex])
+			m.DeploymentUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
@@ -626,7 +626,7 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				stringLen |= (uint64(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -641,11 +641,11 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.RepositoryUrl = string(data[iNdEx:postIndex])
+			m.RepositoryUrl = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipDeploymentStatusEvent(data[iNdEx:])
+			skippy, err := skipDeploymentStatusEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -664,8 +664,8 @@ func (m *DeploymentStatus) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
-	l := len(data)
+func (m *DeploymentStatusEvent) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		preIndex := iNdEx
@@ -677,7 +677,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if iNdEx >= l {
 				return io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -705,7 +705,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -722,7 +722,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.DeploymentStatus == nil {
 				m.DeploymentStatus = &DeploymentStatus{}
 			}
-			if err := m.DeploymentStatus.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.DeploymentStatus.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -738,7 +738,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -755,7 +755,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.Deployment == nil {
 				m.Deployment = &Deployment{}
 			}
-			if err := m.Deployment.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Deployment.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -771,7 +771,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -788,7 +788,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.Repository == nil {
 				m.Repository = &Repository{}
 			}
-			if err := m.Repository.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Repository.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -804,7 +804,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -821,7 +821,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.Sender == nil {
 				m.Sender = &User{}
 			}
-			if err := m.Sender.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Sender.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -837,7 +837,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -854,7 +854,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.Installation == nil {
 				m.Installation = &Installation{}
 			}
-			if err := m.Installation.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Installation.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -870,7 +870,7 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 				if iNdEx >= l {
 					return io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				msglen |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -887,13 +887,13 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 			if m.Organization == nil {
 				m.Organization = &User{}
 			}
-			if err := m.Organization.Unmarshal(data[iNdEx:postIndex]); err != nil {
+			if err := m.Organization.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
-			skippy, err := skipDeploymentStatusEvent(data[iNdEx:])
+			skippy, err := skipDeploymentStatusEvent(dAtA[iNdEx:])
 			if err != nil {
 				return err
 			}
@@ -912,8 +912,8 @@ func (m *DeploymentStatusEvent) Unmarshal(data []byte) error {
 	}
 	return nil
 }
-func skipDeploymentStatusEvent(data []byte) (n int, err error) {
-	l := len(data)
+func skipDeploymentStatusEvent(dAtA []byte) (n int, err error) {
+	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
 		var wire uint64
@@ -924,7 +924,7 @@ func skipDeploymentStatusEvent(data []byte) (n int, err error) {
 			if iNdEx >= l {
 				return 0, io.ErrUnexpectedEOF
 			}
-			b := data[iNdEx]
+			b := dAtA[iNdEx]
 			iNdEx++
 			wire |= (uint64(b) & 0x7F) << shift
 			if b < 0x80 {
@@ -942,7 +942,7 @@ func skipDeploymentStatusEvent(data []byte) (n int, err error) {
 					return 0, io.ErrUnexpectedEOF
 				}
 				iNdEx++
-				if data[iNdEx-1] < 0x80 {
+				if dAtA[iNdEx-1] < 0x80 {
 					break
 				}
 			}
@@ -959,7 +959,7 @@ func skipDeploymentStatusEvent(data []byte) (n int, err error) {
 				if iNdEx >= l {
 					return 0, io.ErrUnexpectedEOF
 				}
-				b := data[iNdEx]
+				b := dAtA[iNdEx]
 				iNdEx++
 				length |= (int(b) & 0x7F) << shift
 				if b < 0x80 {
@@ -982,7 +982,7 @@ func skipDeploymentStatusEvent(data []byte) (n int, err error) {
 					if iNdEx >= l {
 						return 0, io.ErrUnexpectedEOF
 					}
-					b := data[iNdEx]
+					b := dAtA[iNdEx]
 					iNdEx++
 					innerWire |= (uint64(b) & 0x7F) << shift
 					if b < 0x80 {
@@ -993,7 +993,7 @@ func skipDeploymentStatusEvent(data []byte) (n int, err error) {
 				if innerWireType == 4 {
 					break
 				}
-				next, err := skipDeploymentStatusEvent(data[start:])
+				next, err := skipDeploymentStatusEvent(dAtA[start:])
 				if err != nil {
 					return 0, err
 				}
