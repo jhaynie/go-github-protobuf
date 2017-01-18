@@ -43,6 +43,7 @@
 		release_event.proto
 		repository.proto
 		repository_event.proto
+		repository_permission.proto
 		status_event.proto
 		team.proto
 		team_add_event.proto
@@ -116,9 +117,9 @@
 		Asset
 		Release
 		ReleaseEvent
-		RepositoryPermission
 		Repository
 		RepositoryEvent
+		RepositoryPermission
 		StatusCommitDetailTree
 		StatusCommitBranch
 		StatusCommitDetail
