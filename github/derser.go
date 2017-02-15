@@ -207,7 +207,8 @@ func (e Event) String() string {
 
 func toTimestamp(t interface{}) string {
 	switch t.(type) {
-		case json.Number: {
+	case json.Number:
+		{
 			i, err := t.(json.Number).Int64()
 			if err != nil {
 				panic(fmt.Sprintf("error deserializing number: %v, error: %v", t, err))
@@ -215,7 +216,8 @@ func toTimestamp(t interface{}) string {
 			tm := time.Unix(i, 0)
 			return tm.Format("2006-01-02T15:04:05Z")
 		}
-		case float64: {
+	case float64:
+		{
 			tm := time.Unix(int64(t.(float64)), 0)
 			return tm.Format("2006-01-02T15:04:05Z")
 		}
@@ -238,18 +240,19 @@ func applyPushEventHack(buf []byte) []byte {
 		r["created_at"] = toTimestamp(r["created_at"])
 		if r["organization"] != nil {
 			switch v := r["organization"].(type) {
-			case string: {
-				// for a webhook, organization can be a string value
-				// which points to the organization login instead of the
-				// User object. we need to patch that
-				if p["organization"] != nil {
-					if org, ok := p["organization"].(map[string]interface{}); ok {
-						if v == org["login"] {
-							r["organization"] = org
+			case string:
+				{
+					// for a webhook, organization can be a string value
+					// which points to the organization login instead of the
+					// User object. we need to patch that
+					if p["organization"] != nil {
+						if org, ok := p["organization"].(map[string]interface{}); ok {
+							if v == org["login"] {
+								r["organization"] = org
+							}
 						}
 					}
 				}
-			}
 			}
 		}
 	}
@@ -272,10 +275,11 @@ func applyPushEventHack(buf []byte) []byte {
 			idval := head_commit["id"]
 			if idval != nil {
 				switch v := idval.(type) {
-				case string: {
-					head_commit["sha"] = v
-					head_commit["id"] = nil
-				}
+				case string:
+					{
+						head_commit["sha"] = v
+						head_commit["id"] = nil
+					}
 				}
 			}
 		}
