@@ -207,7 +207,8 @@ func (e Event) String() string {
 
 func toTimestamp(t interface{}) string {
 	switch t.(type) {
-		case json.Number: {
+	case json.Number:
+		{
 			i, err := t.(json.Number).Int64()
 			if err != nil {
 				panic(fmt.Sprintf("error deserializing number: %v, error: %v", t, err))
@@ -215,7 +216,8 @@ func toTimestamp(t interface{}) string {
 			tm := time.Unix(i, 0)
 			return tm.Format("2006-01-02T15:04:05Z")
 		}
-		case float64: {
+	case float64:
+		{
 			tm := time.Unix(int64(t.(float64)), 0)
 			return tm.Format("2006-01-02T15:04:05Z")
 		}
@@ -233,44 +235,51 @@ func applyPushEventHack(buf []byte) []byte {
 	if err := d.Decode(&p); err != nil {
 		panic(err.Error())
 	}
-	r := p["repository"].(map[string]interface{})
-	r["pushed_at"] = toTimestamp(r["pushed_at"])
-	r["created_at"] = toTimestamp(r["created_at"])
-	if r["organization"] != nil {
-		switch v := r["organization"].(type) {
-			case string: {
-				// for a webhook, organization can be a string value
-				// which points to the organization login instead of the
-				// User object. we need to patch that
-				if p["organization"] != nil {
-					org := p["organization"].(map[string]interface{})
-					if v == org["login"] {
-						r["organization"] = org
+	if r, ok := p["repository"].(map[string]interface{}); ok {
+		r["pushed_at"] = toTimestamp(r["pushed_at"])
+		r["created_at"] = toTimestamp(r["created_at"])
+		if r["organization"] != nil {
+			switch v := r["organization"].(type) {
+			case string:
+				{
+					// for a webhook, organization can be a string value
+					// which points to the organization login instead of the
+					// User object. we need to patch that
+					if p["organization"] != nil {
+						if org, ok := p["organization"].(map[string]interface{}); ok {
+							if v == org["login"] {
+								r["organization"] = org
+							}
+						}
 					}
 				}
 			}
 		}
 	}
-	commits := p["commits"].([]interface{})
-	for _, c := range commits {
-		commit := c.(map[string]interface{})
-		if commit["sha"] == nil {
-			if commit["id"] == nil {
-				commit["sha"] = p["after"]
-			} else {
-				commit["sha"] = commit["id"]
+	if commits, ok := p["commits"].([]interface{}); ok {
+		for _, c := range commits {
+			if commit, ok := c.(map[string]interface{}); ok {
+				if commit["sha"] == nil {
+					if commit["id"] == nil {
+						commit["sha"] = p["after"]
+					} else {
+						commit["sha"] = commit["id"]
+					}
+				}
 			}
 		}
 	}
 	// head_commit can have wrong id
 	if p["head_commit"] != nil {
-		head_commit := p["head_commit"].(map[string]interface{})
-		idval := head_commit["id"]
-		if  idval != nil {
-			switch v := idval.(type) {
-				case string: {
-					head_commit["sha"] = v
-					head_commit["id"] = nil
+		if head_commit, ok := p["head_commit"].(map[string]interface{}); ok {
+			idval := head_commit["id"]
+			if idval != nil {
+				switch v := idval.(type) {
+				case string:
+					{
+						head_commit["sha"] = v
+						head_commit["id"] = nil
+					}
 				}
 			}
 		}
