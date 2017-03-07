@@ -121,6 +121,7 @@ func messageMAC(signature string) ([]byte, func() hash.Hash, error) {
 //     }
 //
 func ValidatePayload(r *http.Request, secretKey []byte) (payload []byte, err error) {
+	defer r.Body.Close()
 	payload, err = ioutil.ReadAll(r.Body)
 	if err != nil {
 		return nil, err
