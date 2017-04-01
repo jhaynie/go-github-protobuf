@@ -14,12 +14,7 @@ option (gogoproto.goproto_getters_all) = false;
 import "github.com/jhaynie/go-github-protobuf/github/user.proto";
 import "github.com/jhaynie/go-github-protobuf/github/milestone.proto";
 import "github.com/jhaynie/go-github-protobuf/github/reactions.proto";
-
-message Label {
-	string url = 1;
-	string name = 2;
-	string color = 3;
-}
+import "github.com/jhaynie/go-github-protobuf/github/label.proto";
 
 message PullRequestRef {
 	string url = 1;

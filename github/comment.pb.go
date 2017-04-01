@@ -27,10 +27,14 @@
 		issue.proto
 		issue_comment_event.proto
 		issues_event.proto
+		label.proto
+		label_event.proto
 		member_event.proto
 		membership_event.proto
 		message.proto
 		milestone.proto
+		milestone_event.proto
+		organization_event.proto
 		page_build_event.proto
 		ping.proto
 		public_event.proto
@@ -86,15 +90,22 @@
 		IntegrationInstallation
 		InstallationRepo
 		IntegrationInstallationRepositories
-		Label
 		PullRequestRef
 		Issue
 		IssueCommentEvent
 		IssuesEvent
+		Label
+		LabelChange
+		LabelEvent
 		MemberEvent
 		MembershipEvent
 		Message
 		Milestone
+		MilestoneChange
+		MilestoneEvent
+		Invitation
+		Membership
+		OrganizationEvent
 		BuildError
 		Build
 		PageBuildEvent
