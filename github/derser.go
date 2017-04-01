@@ -152,7 +152,7 @@ func validateSignature(signature string, payload, secretKey []byte) error {
 		return err
 	}
 	if ok, err := checkMAC(payload, messageMAC, secretKey, hashFunc); !ok {
-		return errors.New("payload signature check failed. %v", err)
+		return fmt.Errorf("payload signature check failed. %v", err)
 	}
 	return nil
 }
