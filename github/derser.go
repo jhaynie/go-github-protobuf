@@ -47,8 +47,11 @@ var (
 		"integration_installation_repositories": "IntegrationInstallationRepositoriesEvent",
 		"issue_comment":                         "IssueCommentEvent",
 		"issues":                                "IssuesEvent",
+		"label":                                 "LabelEvent",
 		"member":                                "MemberEvent",
 		"membership":                            "MembershipEvent",
+		"milestone":                             "MilestoneEvent",
+		"organization":                          "OrganizationEvent",
 		"page_build":                            "PageBuildEvent",
 		"ping":                                  "Ping",
 		"public":                                "PublicEvent",
@@ -73,9 +76,12 @@ func genMAC(message, key []byte, hashFunc func() hash.Hash) []byte {
 }
 
 // checkMAC reports whether messageMAC is a valid HMAC tag for message.
-func checkMAC(message, messageMAC, key []byte, hashFunc func() hash.Hash) bool {
+func checkMAC(message, messageMAC, key []byte, hashFunc func() hash.Hash) (bool, error) {
 	expectedMAC := genMAC(message, key, hashFunc)
-	return hmac.Equal(messageMAC, expectedMAC)
+	if !hmac.Equal(messageMAC, expectedMAC) {
+		return false, fmt.Errorf("expected %x but was %x", expectedMAC, messageMAC)
+	}
+	return true, nil
 }
 
 // messageMAC returns the hex-decoded HMAC tag from the signature and its
@@ -145,8 +151,8 @@ func validateSignature(signature string, payload, secretKey []byte) error {
 	if err != nil {
 		return err
 	}
-	if !checkMAC(payload, messageMAC, secretKey, hashFunc) {
-		return errors.New("payload signature check failed")
+	if ok, err := checkMAC(payload, messageMAC, secretKey, hashFunc); !ok {
+		return errors.New("payload signature check failed. %v", err)
 	}
 	return nil
 }
@@ -187,7 +193,11 @@ func ParseWebHook(messageType string, payload []byte) (interface{}, error) {
 		Type:       &eventType,
 		RawPayload: (*json.RawMessage)(&payload),
 	}
-	return event.Payload(), nil
+	p := event.Payload()
+	if p == nil {
+		return nil, fmt.Errorf("couldn't deserialize %v", eventType)
+	}
+	return p, nil
 }
 
 // Event represents a GitHub event.
@@ -287,7 +297,7 @@ func applyPushEventHack(buf []byte) []byte {
 	}
 	result, err := json.Marshal(p)
 	if err != nil {
-		panic(err.Error())
+		return nil
 	}
 	return result
 }
@@ -320,10 +330,16 @@ func (e *Event) Payload() (payload interface{}) {
 		payload = &IssueCommentEvent{}
 	case "IssuesEvent":
 		payload = &IssuesEvent{}
+	case "LabelEvent":
+		payload = &LabelEvent{}
 	case "MemberEvent":
 		payload = &MemberEvent{}
 	case "MembershipEvent":
 		payload = &MembershipEvent{}
+	case "MilestoneEvent":
+		payload = &MilestoneEvent{}
+	case "OrganizationEvent":
+		payload = &OrganizationEvent{}
 	case "PageBuildEvent":
 		payload = &PageBuildEvent{}
 	case "Ping":
@@ -351,7 +367,7 @@ func (e *Event) Payload() (payload interface{}) {
 		payload = &WatchEvent{}
 	}
 	if err := json.Unmarshal(*e.RawPayload, &payload); err != nil {
-		panic(err.Error())
+		return nil
 	}
 	return payload
 }
