@@ -131,6 +131,7 @@
 		Asset
 		Release
 		ReleaseEvent
+		RepositoryLicense
 		Repository
 		RepositoryEvent
 		RepositoryPermission
